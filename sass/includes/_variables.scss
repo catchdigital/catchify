@@ -1,0 +1,24 @@
+// Variables
+// ---
+
+// Bootstrap variables
+@import '../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/variables';
+
+// Colours
+$colour-grey: #999;
+$colour-grey-light: #ccc;
+$colour-grey-lightest: #F4F6F8;
+$colour-grey-dark: #454f58;
+$colour-grey-darkest: #010101;
+
+// Dimensions
+$dimension-border-width: 1px;
+$dimension-padding: ($grid-gutter-width / 2);
+$dimension-padding-lg: $grid-gutter-width;
+$dimension-padding-xl: ($grid-gutter-width * 2);
+
+// Fonts
+$font-family: 'Avenir Next', Arial, sans-serif;
+$font-size: 16px;
+$font-colour: $colour-grey-darkest;
+$font-line-height: 1.25;

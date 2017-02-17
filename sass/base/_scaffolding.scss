@@ -1,0 +1,11 @@
+// Scaffolding works a bit like resets, but rather adds some base properties
+// to ensure maximum compatibility
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}

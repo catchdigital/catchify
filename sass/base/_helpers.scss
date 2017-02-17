@@ -1,0 +1,120 @@
+// Helpers ensure we can stick together our components and fix any contextual
+// issues that arise during the front end build
+
+.margin-reset {
+  margin: 0;
+}
+
+.margin-reset-top {
+  margin-top: 0;
+}
+
+.margin-reset-bottom {
+  margin-bottom: 0;
+}
+
+.padding-reset {
+  padding: 0;
+}
+
+.padding-reset-top {
+  padding-top: 0;
+}
+
+.padding-reset-bottom {
+  padding-bottom: 0;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.buffer {
+  padding-top: $dimension-padding;
+}
+
+.buffer-sm {
+  padding-top: ($dimension-padding / 2);
+}
+
+.buffer-lg {
+  padding-top: $dimension-padding-lg;
+}
+
+.hidden {
+  display: none;
+}
+
+.hidden-xs {
+  display: none;
+}
+
+.hidden-sm {
+  display: none;
+}
+
+.hidden-md {
+  display: none;
+}
+
+@media (min-width: $screen-sm-min) {
+  .visible-xs {
+    display: none;
+  }
+
+  .visible-sm {
+    display: block;
+  }
+
+  .hidden-xs {
+    display: block;
+  }
+
+  .text-left-sm {
+    text-align: left;
+  }
+
+  .text-center-sm {
+    text-align: center;
+  }
+
+  .text-right-sm {
+    text-align: right;
+  }
+}
+
+@media (min-width: $screen-md-min) {
+  .visible-sm {
+    display: none;
+  }
+
+  .hidden-sm {
+    display: block;
+  }
+
+  .text-center-md {
+    text-align: center;
+  }
+}
+
+@media (min-width: $screen-lg-min) {
+  .visible-md {
+    display: none;
+  }
+
+  .hidden-md {
+    display: block;
+  }
+}
