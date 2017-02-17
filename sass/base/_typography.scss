@@ -1,0 +1,70 @@
+html {
+  font-size: $font-size;
+  font-family: $font-family;
+  color: $font-colour;
+  line-height: $font-line-height;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4,
+h5,
+h6 {
+  font-size: 1.2rem;
+}
+
+p,
+ul,
+ol,
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+a {
+  color: $font-colour;
+
+  &:hover,
+  &:active,
+  &:focus {
+    text-decoration: none;
+  }
+}
+
+hr {
+  background: none;
+  border: none;
+  border-top: solid $colour-grey-light 1px;
+}
+
+ul,
+ol {
+  padding-left: 1rem;
+}

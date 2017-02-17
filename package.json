@@ -1,0 +1,23 @@
+{
+  "name": "catchify",
+  "version": "1.0.0",
+  "description": "A collection of front end files to kickstart projects",
+  "scripts": {
+    "build": "node-sass ./sass/styles.scss -o ./build/ --source-map true && postcss --use autoprefixer --autoprefixer.browsers 'IE 11, > 1%' ./build/styles.css -d ./build/ && date +'Built: %T'",
+    "postinstall": "npm run build",
+    "test": "npm install -g node-sass postcss-cli autoprefixer && npm install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/catchdigital/catchify.git"
+  },
+  "author": "Stuart Wilson <s.wilson@catchdigital.com>",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap-sass": "^3.3.6",
+    "node.normalize.scss": "^3.0.3"
+  },
+  "engines": {
+    "node" : "~6.0.0"
+  }
+}

@@ -1,0 +1,25 @@
+/**
+ * Used to calculate a REM value for a CSS property with a pixel fallback
+ * Requires $font-size to be set
+ *
+ * Note: This is not needed for IE11+
+ *
+ * @param  String $prop
+ * @param  Float $size
+ */
+@mixin relative-size($prop, $size) {
+  #{$prop}: ($size * $font-size);
+  #{$prop}: #{$size}rem;
+}
+
+/**
+ * Used to calculate a REM value fonts with a pixel fallback
+ * Requires $font-size to be set
+ *
+ * Note: This is not needed for IE11+
+ *
+ * @param  Float $size
+ */
+@mixin font-size($size) {
+  @include relative-size(font-size, $size);
+}
