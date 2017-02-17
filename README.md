@@ -20,11 +20,6 @@ Recommended Project SASS Directory Structure:
 /sass/styles.scss
 ```
 
-### Install build tools
-```
-npm install -g node-sass postcss-cli autoprefixer
-```
-
 ### Import SCSS files
 :bulb: Remember to replace `__NODE_MODULES_DIR__` to the actual relative path in your project
 

@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "A collection of front end files to kickstart projects",
   "scripts": {
-    "build": "node-sass ./sass/styles.scss -o ./build/ --source-map true && postcss --use autoprefixer --autoprefixer.browsers 'IE 11, > 1%' ./build/styles.css -d ./build/ && date +'Built: %T'",
+    "build": "node ./node_modules/.bin/node-sass ./sass/styles.scss -o ./build/ --source-map true && node ./node_modules/.bin/postcss --use autoprefixer --autoprefixer.browsers 'IE 11, > 1%' ./build/styles.css -d ./build/ && date +'Built: %T'",
     "postinstall": "npm run build",
-    "test": "npm install -g node-sass postcss-cli autoprefixer && npm install"
+    "test": "npm install"
   },
   "repository": {
     "type": "git",
@@ -18,6 +18,11 @@
     "node.normalize.scss": "^3.0.3"
   },
   "engines": {
-    "node" : "~6.0.0"
+    "node": "~6.0.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.7.3",
+    "node-sass": "^4.5.0",
+    "postcss-cli": "^3.0.0-beta"
   }
 }
