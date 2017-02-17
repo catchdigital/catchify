@@ -42,9 +42,3 @@ Recommended Project SASS Directory Structure:
 // Project Helpers
 @import 'includes/base/helpers';
 ```
-
-### Build script example
-Look in the [package.json](./package.json) file for setup examples
-```
-node-sass ./sass/styles.scss -o ./build/ --source-map true && postcss --use autoprefixer --autoprefixer.browsers 'IE 11, > 1%' ./build/styles.css -d ./build/ && date +'Built: %T'
-```

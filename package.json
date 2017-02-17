@@ -3,7 +3,7 @@
   "version": "1.0.1",
   "description": "A collection of front end files to kickstart projects",
   "scripts": {
-    "build": "node ./node_modules/.bin/node-sass ./sass/styles.scss -o ./build/ --source-map true && node ./node_modules/.bin/postcss --use autoprefixer --autoprefixer.browsers 'IE 11, > 1%' ./build/styles.css -d ./build/ && date +'Built: %T'",
+    "build": "node ./node_modules/.bin/node-sass ./sass/styles.scss -o ./build/ --source-map true --include-path ./node_modules && node ./node_modules/.bin/postcss --use autoprefixer --autoprefixer.browsers 'IE 11, > 1%' ./build/styles.css -d ./build/ && date +'Built: %T'",
     "test": "npm install && npm run build"
   },
   "repository": {
