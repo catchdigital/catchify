@@ -30,6 +30,10 @@ const defaultOptions = {
   breakpoints: ['xs', 'sm', 'md', 'lg'],
   // The breakpoint attribute used to query visible element flag
   dataAttrSelector: 'data-catchify-breakpoint',
+  // An event to fire when the breakpoint initialises
+  breakpointInitEvent: 'breakpointInit',
+  // An event to fire when the breakpoint changes
+  breakpointChangeEvent: 'breakpointChange',
 };
 
 const breakpoint = {
@@ -38,6 +42,8 @@ const breakpoint = {
    * @param  {Object}   options
    */
   init(options = {}) {
+    let changeTimeoutId;
+    let lastCalculatedSize;
     // Combine user given options with defaults
     this.options = Object.assign(defaultOptions, options);
 
@@ -52,6 +58,26 @@ const breakpoint = {
 
       // Add element to body
       $('body').append($element);
+    });
+
+    // Trigger init event
+    $(window).trigger(this.options.breakpointInitEvent, {
+      breakpoint: this.get(),
+    });
+
+    // Watch for resizes
+    $(window).resize(() => {
+      clearTimeout(changeTimeoutId);
+
+      changeTimeoutId = setTimeout(() => {
+        if (lastCalculatedSize !== this.get()) {
+          lastCalculatedSize = this.get();
+
+          $(window).trigger(this.options.breakpointChangeEvent, {
+            breakpoint: lastCalculatedSize,
+          });
+        }
+      }, this.options.resizeTimeout);
     });
   },
 
@@ -80,28 +106,6 @@ const breakpoint = {
    */
   not(size) {
     return !this.is(size);
-  },
-
-  /**
-   * Provides an interface for reacting to breakpoint changes using a
-   * deferred resize event and a checkt to see if the breakpoint has changed
-   *
-   * @param  {Function} resized
-   */
-  onChange(resized) {
-    resized(this.get());
-
-    $(window).resize(() => {
-      this.changeTimeoutId = setTimeout(() => {
-        clearTimeout(this.changeTimeoutId);
-
-        if (this.lastCalculatedSize !== this.get()) {
-          this.lastCalculatedSize = this.get();
-
-          resized(this.lastCalculatedSize);
-        }
-      }, this.options.resizeTimeout);
-    });
   },
 };
 

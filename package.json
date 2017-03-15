@@ -3,7 +3,7 @@
   "version": "1.0.3",
   "description": "A collection of front end files to kickstart projects",
   "scripts": {
-    "build:js": "node ./node_modules/.bin/browserify -t [ babelify --presets [ es2015 ] ] ./javascript/index.js -o ./build/bundle.js",
+    "build:js": "node ./node_modules/.bin/browserify -t [ babelify --presets [ es2015 ] ] ./javascript/index.js -o ./build/bundle.js && date +'Built: %T'",
     "build:css": "node ./node_modules/.bin/node-sass ./sass/styles.scss -o ./build/ --source-map true --include-path ./node_modules && node ./node_modules/.bin/postcss --use autoprefixer --autoprefixer.browsers 'IE 11, > 1%' ./build/styles.css -d ./build/ && date +'Built: %T'",
     "build": "npm run build:css && npm run build:js",
     "test": "npm run build && node ./node_modules/.bin/eslint ."
