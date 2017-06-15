@@ -11,12 +11,22 @@ describe('Breakpoint module.', function() {
 
   describe('Breakpoint initialisation.', function() {
     it('Should initialise without options.', function() {
+      breakpoint.destroy();
+      breakpoint.init();
+
+      expect($(`[${breakpoint.options.dataAttrSelector}]`).length).toBe(4);
+    });
+
+    it('Should initialise only once.', function() {
+      breakpoint.destroy();
+      breakpoint.init();
       breakpoint.init();
 
       expect($(`[${breakpoint.options.dataAttrSelector}]`).length).toBe(4);
     });
 
     it('Should initialise with options.', function() {
+      breakpoint.destroy();
       breakpoint.init({
         breakpoints: ['xss'],
         dataAttrSelector: 'data-foo',
@@ -32,6 +42,7 @@ describe('Breakpoint module.', function() {
 
   describe('Breakpoint methods.', function() {
     it('Should query the breakpoint accurately.', function() {
+      breakpoint.destroy();
       breakpoint.init();
 
       expect(breakpoint.get()).toBe('lg');
@@ -42,6 +53,7 @@ describe('Breakpoint module.', function() {
 
   describe('Breakpoint queries.', function() {
     it('Should query the lg breakpoint accurately.', function() {
+      breakpoint.destroy();
       breakpoint.init();
 
       expect(breakpoint.get()).toBe('lg');
@@ -50,6 +62,7 @@ describe('Breakpoint module.', function() {
     });
 
     it('Should query the md breakpoint accurately.', function() {
+      breakpoint.destroy();
       breakpoint.init();
 
       // Here, we can't rely on media queries so we manually augment visibility
@@ -60,6 +73,7 @@ describe('Breakpoint module.', function() {
     });
 
     it('Should query the sm breakpoint accurately.', function() {
+      breakpoint.destroy();
       breakpoint.init();
 
       $(`[${breakpoint.options.dataAttrSelector}="sm"]`).nextAll().hide();
@@ -69,6 +83,7 @@ describe('Breakpoint module.', function() {
     });
 
     it('Should query the xs breakpoint accurately.', function() {
+      breakpoint.destroy();
       breakpoint.init();
 
       $(`[${breakpoint.options.dataAttrSelector}="xs"]`).nextAll().hide();

@@ -37,6 +37,8 @@ const defaultOptions = {
 };
 
 const breakpoint = {
+  // Holds all the elements generated in init()
+  elements: [],
   /**
    * Sets up the breakpoint helper, implementing flag elements into the DOM
    * @param  {Object}   options
@@ -47,38 +49,51 @@ const breakpoint = {
     // Combine user given options with defaults
     this.options = Object.assign({}, defaultOptions, options);
 
-    // For every given breakpoints create a helper flag element
-    this.options.breakpoints.forEach((size) => {
-      const $element = $(this.options.template);
+    // Check that we don't
+    if (!this.elements.length) {
+      // For every given breakpoints create a helper flag element
+      this.options.breakpoints.forEach((size) => {
+        const $element = $(this.options.template);
 
-      // Setup element properties
-      $element.css(this.options.styles);
-      $element.attr('class', this.options.classPrefix + size);
-      $element.attr(this.options.dataAttrSelector, size);
+        // Setup element properties
+        $element.css(this.options.styles);
+        $element.attr('class', this.options.classPrefix + size);
+        $element.attr(this.options.dataAttrSelector, size);
 
-      // Add element to body
-      $('body').append($element);
-    });
+        this.elements.push($element);
+
+        // Add element to body
+        $('body').append($element);
+      });
+
+      // Watch for resizes
+      $(window).resize(() => {
+        clearTimeout(changeTimeoutId);
+
+        changeTimeoutId = setTimeout(() => {
+          if (lastCalculatedSize !== this.get()) {
+            lastCalculatedSize = this.get();
+
+            $(window).trigger(this.options.breakpointChangeEvent, {
+              breakpoint: lastCalculatedSize,
+            });
+          }
+        }, this.options.resizeTimeout);
+      });
+    }
 
     // Trigger init event
     $(window).trigger(this.options.breakpointInitEvent, {
       breakpoint: this.get(),
     });
+  },
 
-    // Watch for resizes
-    $(window).resize(() => {
-      clearTimeout(changeTimeoutId);
-
-      changeTimeoutId = setTimeout(() => {
-        if (lastCalculatedSize !== this.get()) {
-          lastCalculatedSize = this.get();
-
-          $(window).trigger(this.options.breakpointChangeEvent, {
-            breakpoint: lastCalculatedSize,
-          });
-        }
-      }, this.options.resizeTimeout);
+  destroy() {
+    this.elements.forEach(($element) => {
+      $element.remove();
     });
+
+    this.elements = [];
   },
 
   /**
