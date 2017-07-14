@@ -45,7 +45,7 @@ const breakpoint = {
     let changeTimeoutId;
     let lastCalculatedSize;
     // Combine user given options with defaults
-    this.options = Object.assign({}, defaultOptions, options);
+    this.options = $.extend({}, defaultOptions, options);
 
     // For every given breakpoints create a helper flag element
     this.options.breakpoints.forEach((size) => {
