@@ -45,7 +45,12 @@ Recommended Project SASS Directory Structure:
 
 With Catchfiy as a dependency, simply point to where you want to build the CSS (directory and file path)
 ```
-node ./node_modules/catchify/scripts/css.js ./node_modules ./sass/styles.scss BUILD_DIR BUILD_CSS_FILE
+node ./node_modules/catchify/scripts/build-css.js ./node_modules ./sass/styles.scss BUILD_DIR BUILD_CSS_FILE
+```
+
+For fast builds you can pass some extra params
+```
+node ./node_modules/catchify/scripts/build-css.js ./node_modules ./sass/styles.scss 'BUILD_DIR --watch --recursive' BUILD_CSS_FILE
 ```
 
 ## JavaScript Setup
