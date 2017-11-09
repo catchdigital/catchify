@@ -1,0 +1,29 @@
+{
+  "name": "changeme",
+  "version": "1.0.0",
+  "description": "CHANGE ME",
+  "scripts": {
+    "build": "npm run build:css && npm run format && npm run build:js",
+    "build:css": "node ./node_modules/catchify/scripts/css.js ./node_modules ./sass/styles.scss ./build ./build/styles.css",
+    "build:js": "node ./node_modules/catchify/scripts/js.js ./node_modules ./js/src/index.js ./build/bundle.js",
+    "format": "node ./node_modules/catchify/scripts/format.js ./node_modules './js/src/**/*.js'",
+  },
+  "author": "support@catchdigital.com",
+  "license": "MIT",
+  "dependencies": {
+    "catchify": "github:catchdigital/catchify"
+  },
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "presets": [
+            "es2015",
+            "stage-3"
+          ]
+        }
+      ]
+    ]
+  }
+}

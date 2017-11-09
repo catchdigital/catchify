@@ -45,11 +45,14 @@ const breakpoint = {
     let changeTimeoutId;
     let lastCalculatedSize;
     // Combine user given options with defaults
-    this.options = $.extend({}, defaultOptions, options);
+    this.options = {
+      ...defaultOptions,
+      ...options,
+    };
 
     // For every given breakpoints create a helper flag element
-    this.options.breakpoints.forEach((size) => {
-      const $element = $(this.options.template);
+    this.options.breakpoints.forEach(size => {
+      const $element = jQuery(this.options.template);
 
       // Setup element properties
       $element.css(this.options.styles);
@@ -57,23 +60,23 @@ const breakpoint = {
       $element.attr(this.options.dataAttrSelector, size);
 
       // Add element to body
-      $('body').append($element);
+      jQuery('body').append($element);
     });
 
     // Trigger init event
-    $(window).trigger(this.options.breakpointInitEvent, {
+    jQuery(window).trigger(this.options.breakpointInitEvent, {
       breakpoint: this.get(),
     });
 
     // Watch for resizes
-    $(window).resize(() => {
+    jQuery(window).resize(() => {
       clearTimeout(changeTimeoutId);
 
       changeTimeoutId = setTimeout(() => {
         if (lastCalculatedSize !== this.get()) {
           lastCalculatedSize = this.get();
 
-          $(window).trigger(this.options.breakpointChangeEvent, {
+          jQuery(window).trigger(this.options.breakpointChangeEvent, {
             breakpoint: lastCalculatedSize,
           });
         }
@@ -86,8 +89,9 @@ const breakpoint = {
    * @return {String}
    */
   get() {
-    return $(`[${this.options.dataAttrSelector}]:visible:last`)
-             .attr(this.options.dataAttrSelector);
+    return jQuery(`[${this.options.dataAttrSelector}]:visible:last`).attr(
+      this.options.dataAttrSelector,
+    );
   },
 
   /**

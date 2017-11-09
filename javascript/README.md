@@ -24,9 +24,7 @@ import {breakpoint} from 'catchify';
 (function example($) {
   // Outputs screen size to element
   // Bind this first to ensure the breakpointInit event is fired
-  $(window).on('breakpointChange breakpointInit', (e, data) => {
-    console(data.breakpoint);
-  });
+  $(window).on('breakpointChange breakpointInit', (e, data) => console.log(data.breakpoint));
 
   // Initialise breakpoint
   breakpoint.init();
