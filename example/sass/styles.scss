@@ -1,0 +1,17 @@
+// Import catchify includes to expose default variables/mixins
+@import 'catchify/sass/includes/includes';
+@import 'includes/includes';
+
+// Import catchify base.
+// You may want to break this up like so to ensure you only get the SCSS you want:
+// @import 'catchify/sass/base/typography';
+// @import 'catchify/sass/base/scaffolding';
+@import 'catchify/sass/base/base';
+@import 'base/base';
+
+// All components should come after base (global) styles
+@import 'components/components';
+
+// Helpers always come last to ensure they take effect
+@import 'base/helpers';
+@import 'catchify/sass/base/helpers';

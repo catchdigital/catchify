@@ -1,18 +1,17 @@
 {
   "name": "catchify-example",
   "version": "1.0.0",
-  "description": "Catchify example",
+  "description": "Catchify example usage (CHANGE ME and name above)",
   "scripts": {
     "build": "npm run build:css && npm run format && npm run build:js",
     "build:css": "node ./node_modules/catchify/scripts/css.js ./node_modules ./sass/styles.scss ./build ./build/styles.css",
-    "build:js": "node ./node_modules/catchify/scripts/js.js ./node_modules ./js/src/index.js ./build/bundle.js",
-    "format": "node ./node_modules/catchify/scripts/format.js ./node_modules './js/src/**/*.js'"
+    "build:js": "node ./node_modules/catchify/scripts/js.js ./node_modules ./js/index.js ./build/bundle.js",
+    "format": "node ./node_modules/catchify/scripts/format.js ./node_modules './js/*.js'"
   },
   "author": "support@catchdigital.com",
   "license": "MIT",
   "dependencies": {
-    "catchify": "file:..",
-    "prettier": "^1.8.2"
+    "catchify": "github:catchdigital/catchify"
   },
   "browserify": {
     "transform": [
