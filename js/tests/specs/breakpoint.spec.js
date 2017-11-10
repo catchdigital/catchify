@@ -1,4 +1,4 @@
-import breakpoint from '../../lib/breakpoint';
+import { breakpoint } from '../../';
 
 /**
  * Set of tests to check the basic API for the breakpoint module

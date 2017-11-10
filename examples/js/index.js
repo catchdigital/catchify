@@ -1,1 +1,0 @@
-import catchify from 'catchify';

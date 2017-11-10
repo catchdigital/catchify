@@ -9,6 +9,8 @@ A collection of front end files to kickstart projects.
 
 ## Sass Setup
 
+💡 **Check the [SASS Example](./examples/sass) for a quick start**
+
 Recommended Project SASS Directory Structure:
 ```
 /sass/includes
@@ -41,7 +43,7 @@ Recommended Project SASS Directory Structure:
 ```
 
 ### Build SASS
-:bulb: It's recommended that you pop these scripts in your pacakge JSON for convenience
+💡 It's recommended that you pop these scripts in your pacakge JSON for convenience
 
 With Catchfiy as a dependency, simply point to where you want to build the CSS (directory and file path)
 ```
@@ -50,12 +52,12 @@ node ./node_modules/catchify/scripts/css.js ./node_modules ./sass/styles.scss BU
 
 ## JavaScript Setup
 
-:bulb: jQuery is a dependency unless otherwise stated...
+💡 jQuery is a dependency unless otherwise stated...
 
 Recommended Project SASS Directory Structure:
 ```
-/javascript/lib/module.js
-/javascript/index.js
+/js/lib/module.js
+/js/index.js
 ```
 
 ### Import ES6 module files
@@ -68,9 +70,9 @@ catchify.breakpoint.init();
 ```
 
 ### Build JavaScript
-:bulb: It's recommended that you pop these scripts in your pacakge JSON for convenience
+💡 It's recommended that you pop these scripts in your pacakge JSON for convenience
 
 With Catchfiy as a dependency, simply point to where you want to build the Javascript (file path)
 ```
-node ./node_modules/catchify/scripts/js.js ./node_modules ./javascript/index.js BUILD_JS_FILE
+node ./node_modules/catchify/scripts/js.js ./node_modules ./js/index.js BUILD_JS_FILE
 ```
