@@ -6,7 +6,8 @@
     "build": "npm run build:css && npm run format && npm run build:js",
     "build:css": "node ./node_modules/catchify/scripts/css.js ./node_modules ./sass/styles.scss ./build ./build/styles.css",
     "build:js": "node ./node_modules/catchify/scripts/js.js ./node_modules ./js/index.js ./build/bundle.js",
-    "format": "node ./node_modules/catchify/scripts/format.js ./node_modules './js/*.js'"
+    "format:js": "node ./node_modules/catchify/scripts/format.js ./node_modules './js/**/*.js'",
+    "format:css": "node ./node_modules/catchify/scripts/format.js ./node_modules './sass/**/*.scss'"
   },
   "author": "support@catchdigital.com",
   "license": "MIT",
