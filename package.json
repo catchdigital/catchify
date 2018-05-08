@@ -2,13 +2,15 @@
   "name": "catchify",
   "version": "1.0.3",
   "description": "A collection of front end files to kickstart projects",
-  "main": "javascript/index.js",
+  "main": "js/index.js",
   "scripts": {
-    "build:js": "node scripts/js.js ./node_modules ./javascript/index.js ./build/bundle.js",
+    "format:js": "node scripts/format.js ./node_modules './js/**/*.js'",
+    "format:scss": "node scripts/format.js ./node_modules './sass/**/*.scss'",
+    "build:js": "node scripts/js.js ./node_modules ./js/index.js ./build/bundle.js",
     "build:css": "node scripts/css.js ./node_modules ./sass/styles.scss ./build ./build/styles.css",
-    "build": "npm run build:css && npm run build:js",
-    "test:js": "JASMINE_CONFIG_PATH=javascript/tests/jasmine.json node ./node_modules/.bin/babel-node --presets node6 ./node_modules/.bin/jasmine",
-    "test": "npm run build && node ./node_modules/.bin/eslint . && npm run test:js"
+    "build": "npm run format:scss && npm run build:css && npm run format:js && npm run build:js",
+    "test:js": "JASMINE_CONFIG_PATH=js/tests/jasmine.json node ./node_modules/.bin/babel-node --presets node6 ./node_modules/.bin/jasmine",
+    "test": "npm run build && npm run test:js"
   },
   "repository": {
     "type": "git",
@@ -23,30 +25,30 @@
     "babelify": "^7.3.0",
     "bootstrap-sass": "^3.3.6",
     "browserify": "^14.1.0",
-    "eslint": "^3.17.1",
-    "eslint-config-airbnb": "^14.1.0",
-    "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-jsx-a11y": "^4.0.0",
-    "eslint-plugin-react": "^6.10.0",
     "log-timestamp": "^0.1.2",
     "node-sass": "^4.5.0",
     "node.normalize.scss": "^3.0.3",
-    "postcss-cli": "^3.0.0-beta"
+    "postcss-cli": "^3.0.0-beta",
+    "prettier": "^1.8.2",
+    "babel-preset-stage-3": "^6.24.1"
   },
   "engines": {
     "node": "~6.0.0"
   },
   "devDependencies": {
+    "babel-preset-node6": "^11.0.0",
     "jasmine": "^2.5.3",
-    "jsdom": "^9.12.0",
-    "babel-preset-node6": "^11.0.0"
+    "jsdom": "^9.12.0"
   },
   "browserify": {
     "transform": [
       [
         "babelify",
         {
-          "presets": "es2015"
+          "presets": [
+            "es2015",
+            "stage-3"
+          ]
         }
       ]
     ]

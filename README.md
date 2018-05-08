@@ -2,75 +2,62 @@
 
 ![Build Status](https://travis-ci.org/catchdigital/catchify.svg?branch=master)
 
-A collection of front end files to kickstart projects.
+A solid and consistent starting point for CSS and JavaScript.
 
 ## Installation
-`npm install catchdigital/catchify --save`
+**Jump to 'Usage' below for a quicker way to start** or install using `npm` into your existing project like so:
 
-## Sass Setup
-
-Recommended Project SASS Directory Structure:
 ```
-/sass/includes
-/sass/base
-/sass/components
-
-/sass/styles.scss
+npm install catchdigital/catchify --save
 ```
 
-### Import SCSS files
+## Usage
+1. Copy the contents of the [/example](./example) directory into your project
+2. Rename the [example package.json](./example/package.json) file accordingly
+3. `npm install` to install dependencies
+4. Create things 💥
 
-```sass
-// Catchify Includes (variables, mixins etc)
-@import 'catchify/sass/includes/includes';
-// Project Includes
-@import 'includes/includes';
+💡 Usage is intended using source es6 JS and SCSS.  The above steps will get you in a position to start using these core elements straight away.
 
-// Catchify Base (grid, scaffolding and other global CSS)
-@import 'catchify/sass/includes/base';
-// Project Base
-@import 'includes/base';
+## Scripts
+Scripts have been added and wired up in the [example package.json](./example/package.json) file as long as you keep the same directory structure.
 
-// Project Components (reusable BEM components)
-@import 'components/components';
-
-// Catchify Helpers (override classes that act as the 'glue' etc)
-@import 'catchify/sass/includes/base/helpers';
-// Project Helpers
-@import 'includes/base/helpers';
+To watch and build as you develop install this watcher utility:
+```
+npm install -g watch
 ```
 
-### Build SASS
-:bulb: It's recommended that you pop these scripts in your pacakge JSON for convenience
+With `watch` available globally, you can simply run any of the `watch` commands below
 
-With Catchfiy as a dependency, simply point to where you want to build the CSS (directory and file path)
+### CSS
+To build CSS once
 ```
-node ./node_modules/catchify/scripts/css.js ./node_modules ./sass/styles.scss BUILD_DIR BUILD_CSS_FILE
-```
-
-## JavaScript Setup
-
-:bulb: jQuery is a dependency unless otherwise stated...
-
-Recommended Project SASS Directory Structure:
-```
-/javascript/lib/module.js
-/javascript/index.js
+npm run build:css
 ```
 
-### Import ES6 module files
-
-```javascript
-import catchify from 'catchify';
-
-// Use Catchfiy.breakpoint
-catchify.breakpoint.init();
+To watch and build CSS whilst developing
+```
+watch 'npm run build:css' ./sass
 ```
 
-### Build JavaScript
-:bulb: It's recommended that you pop these scripts in your pacakge JSON for convenience
+### JS
+To build JS once
+```
+npm run build:js
+```
 
-With Catchfiy as a dependency, simply point to where you want to build the Javascript (file path)
+To watch and build JS whilst developing
 ```
-node ./node_modules/catchify/scripts/js.js ./node_modules ./javascript/index.js BUILD_JS_FILE
+watch 'npm run build:js' ./js
 ```
+
+### Format
+To format JS once
+```
+npm run format
+```
+
+💡 Formatting code will change the source file to ensure all code is formatted similarly.  This will affect committed code in most cases so it's a really good idea to run `npm run format` or `npm run build` prior to commiting to ensure that formatting changes won't require a follow up commit.  See below for more info on formatting.
+
+## Formatting / Linting
+Catchify now relies on [Prettier](https://github.com/prettier/prettier) which is an opinionated code formatter.  Rather than simply flagging coding standard violations (quote styles, trailing commas, semi colons, line lengths etc) it simply goes in and changes them.  It's strict and unforgiving at first, but it's the most frustration free way to ensure JS code is consistent across projects and developers.
