@@ -22,7 +22,6 @@
     "autoprefixer": "^6.7.3",
     "babel-cli": "^6.24.0",
     "babel-preset-env": "^1.7.0",
-    "babelify": "^7.3.0",
     "bootstrap-sass": "^3.3.6",
     "browserify": "^14.1.0",
     "log-timestamp": "^0.1.2",
@@ -36,7 +35,9 @@
     "node": "~6.0.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.2.2",
     "babel-preset-node6": "^11.0.0",
+    "babelify": "^7.3.0",
     "jasmine": "^2.5.3",
     "jsdom": "^9.12.0"
   },
