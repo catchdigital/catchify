@@ -11,6 +11,8 @@ A solid and consistent starting point for CSS and JavaScript.
 npm install catchify-core --save
 ```
 
+_TODO: Update all the following lines_
+
 ## Usage
 1. Copy the contents of the [/example](./example) directory into your project
 2. Rename the [example package.json](./example/package.json) file accordingly

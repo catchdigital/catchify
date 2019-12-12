@@ -1,0 +1,13 @@
+# Exclude these directories
+# /node_modules
+/build
+# /dist
+
+# Error log
+npm-debug.log
+
+# Silly Macs
+.DS_Store
+
+# Example
+/example
