@@ -1,4 +1,10 @@
-@import 'base';
+// Base variables from materialize
+// TODO: We shuold create our based variables based on this template.
+@import 'materialize-css/sass/components/color-variables';
+@import 'materialize-css/sass/components/variables';
+
+// Import globals for references
+@import 'materialize-css/sass/components/global';
 
 // Forms base styles
-@import 'forms/index';
+@import '../components/forms/index';

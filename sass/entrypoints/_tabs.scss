@@ -1,4 +1,5 @@
-@import 'base';
+@import 'materialize-css/sass/components/color-variables';
+@import 'materialize-css/sass/components/variables';
 
-// Forms base styles
-@import 'tabs/index';
+// Tabs base styles
+@import '../components/tabs/index';

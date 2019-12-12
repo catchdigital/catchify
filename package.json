@@ -9,8 +9,8 @@
     "build": "npm run format:scss && npm run build:css && npm run format:js && npm run build:js",
     "build:css": "node scripts/css.js ./node_modules ./sass/styles.scss ./dist ./dist/styles.css",
     "build:base:css": "node scripts/css.js ./node_modules ./sass/entrypoints/_base.scss ./dist ./dist/_base.css",
-    "build:forms:css": "node scripts/css.js ./node_modules ./sass/entrypoints/forms.scss ./dist ./dist/forms.css",
-    "build:tabs:css": "node scripts/css.js ./node_modules ./sass/entrypoints/tabs.scss ./dist ./dist/tabs.css",
+    "build:forms:css": "node scripts/css.js ./node_modules ./sass/entrypoints/_forms.scss ./dist ./dist/_forms.css",
+    "build:tabs:css": "node scripts/css.js ./node_modules ./sass/entrypoints/_tabs.scss ./dist ./dist/_tabs.css",
     "build:js": "node scripts/js.js ./node_modules ./js/index.js ./build/bundle.js",
     "test:js": "JASMINE_CONFIG_PATH=js/tests/jasmine.json node ./node_modules/.bin/babel-node --presets node6 ./node_modules/.bin/jasmine",
     "test": "npm run build && npm run test:js"
