@@ -4,8 +4,8 @@ on:
   push:
     branches:
       - feature/new-ui
-  tags:
-    - 3.*.*
+    tags:
+      - 3.*.*
 
 jobs:
   build:
