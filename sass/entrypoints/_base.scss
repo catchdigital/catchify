@@ -1,11 +1,17 @@
-// Includes
+// Includes.
 @import '../includes/includes';
 
-// Base
+// Base.
 @import '../base/base';
 
-// global from materialize
+// Base variables from materialize.
+// TODO: We should create our base variables.
+@import 'materialize-css/sass/components/color-variables';
+@import 'materialize-css/sass/components/color-classes'; // TODO: Do we need this?
+@import 'materialize-css/sass/components/variables';
+
+// global from materialize.
 @import 'materialize-css/sass/components/global';
 
-// Helpers last for easier overrides
+// Helpers last for easier overrides.
 @import '../base/helpers';
