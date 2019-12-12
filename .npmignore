@@ -1,6 +1,6 @@
 # Exclude these directories
 # /node_modules
-/build
+build
 # /dist
 
 # Error log
@@ -10,4 +10,7 @@ npm-debug.log
 .DS_Store
 
 # Example
-/example
+example
+
+# GitHub actions
+.github
