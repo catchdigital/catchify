@@ -1,14 +1,17 @@
 {
-  "name": "catchify",
+  "name": "catchify-core",
   "version": "3.0.0",
   "description": "A collection of front end files to kickstart projects",
   "main": "js/index.js",
   "scripts": {
     "format:js": "node scripts/format.js ./node_modules './js/**/*.js'",
     "format:scss": "node scripts/format.js ./node_modules './sass/**/*.scss'",
-    "build:js": "node scripts/js.js ./node_modules ./js/index.js ./build/bundle.js",
-    "build:css": "node scripts/css.js ./node_modules ./sass/styles.scss ./build ./build/styles.css",
     "build": "npm run format:scss && npm run build:css && npm run format:js && npm run build:js",
+    "build:css": "node scripts/css.js ./node_modules ./sass/styles.scss ./dist ./dist/styles.css",
+    "build:base:css": "node scripts/css.js ./node_modules ./sass/entrypoints/_base.scss ./dist ./dist/_base.css",
+    "build:forms:css": "node scripts/css.js ./node_modules ./sass/entrypoints/forms.scss ./dist ./dist/forms.css",
+    "build:tabs:css": "node scripts/css.js ./node_modules ./sass/entrypoints/tabs.scss ./dist ./dist/tabs.css",
+    "build:js": "node scripts/js.js ./node_modules ./js/index.js ./build/bundle.js",
     "test:js": "JASMINE_CONFIG_PATH=js/tests/jasmine.json node ./node_modules/.bin/babel-node --presets node6 ./node_modules/.bin/jasmine",
     "test": "npm run build && npm run test:js"
   },
@@ -28,17 +31,15 @@
     "babel-preset-es2015": "^6.24.0",
     "babel-preset-stage-3": "^6.24.1",
     "babelify": "^7.3.0",
-    "bootstrap-sass": "^3.3.6",
+    "bootstrap": "^4.4.1",
+    "bootstrap-sass": "^3.4.1",
     "browserify": "^14.1.0",
     "log-timestamp": "^0.1.2",
     "materialize-css": "^1.0.0",
-    "node-sass": "^4.12.0",
+    "node-sass": "^4.13.0",
     "node.normalize.scss": "^3.0.3",
     "postcss-cli": "^3.0.0-beta",
     "prettier": "^1.8.2"
-  },
-  "sass": {
-    "includePaths": ["./node_modules"]
   },
   "engines": {
     "node": "~6.0.0"

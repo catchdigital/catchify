@@ -1,4 +1,10 @@
-// Base varaiibles from materialize
+// Includes
+@import '../includes/includes';
+
+// Base
+@import '../base/base';
+
+// Base variables from materialize
 // TODO: We shuold create our based variables based on this template.
 @import 'materialize-css/sass/components/color-variables';
 @import 'materialize-css/sass/components/color-classes';
@@ -7,5 +13,5 @@
 // global from materialize
 @import 'materialize-css/sass/components/global';
 
-// Add forms base styles.
-@import 'materialize-css/sass/components/forms/forms';
+// Helpers last for easier overrides
+@import '../base/helpers';
