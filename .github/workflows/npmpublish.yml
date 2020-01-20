@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - feature/new-ui
+      - feature/add-bootstrap4-grid
     tags:
       - 3.*.*
 

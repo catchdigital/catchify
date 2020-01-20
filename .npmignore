@@ -2,6 +2,8 @@
 # /node_modules
 build
 # /dist
+# sass
+# js
 
 # Error log
 npm-debug.log
