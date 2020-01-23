@@ -1,20 +1,10 @@
 // We use the Bootstrap 3 Grid.
 // More info on usage here: https://getbootstrap.com/css/#grid
 
-// Bootstrap grid mixins
-@import 'bootstrap-sass/assets/stylesheets/bootstrap/mixins/clearfix';
-@import 'bootstrap-sass/assets/stylesheets/bootstrap/mixins/grid-framework';
-@import 'bootstrap-sass/assets/stylesheets/bootstrap/mixins/grid';
-
-// Grid factory
-@import 'bootstrap-sass/assets/stylesheets/bootstrap/grid';
-
 // Bootstrap 4 requirements
-// // Required
-// @import "node_modules/bootstrap/scss/functions";
-// @import "node_modules/bootstrap/scss/variables";
-// @import "node_modules/bootstrap/scss/mixins";
-//
+// Required
+@import 'bootstrap/scss/bootstrap-grid';
+
 // // Optional
 // @import "node_modules/bootstrap/scss/reboot";
 // @import "node_modules/bootstrap/scss/type";

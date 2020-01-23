@@ -1,10 +1,10 @@
 import {
-    Forms,
-    Select,
-    Dropdown,
-    Modal,
-    Datepicker,
-    Timepicker
+  Forms,
+  Select,
+  Dropdown,
+  Modal,
+  Datepicker,
+  Timepicker
 } from 'materialize-css';
 
 document.addEventListener('DOMContentLoaded', function() {
