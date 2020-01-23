@@ -4,6 +4,7 @@ build
 # /dist
 # sass
 # js
+framework
 
 # Error log
 npm-debug.log
