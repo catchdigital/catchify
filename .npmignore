@@ -1,7 +1,10 @@
 # Exclude these directories
-# /node_modules
+node_modules
 build
 # /dist
+# sass
+# js
+framework
 
 # Error log
 npm-debug.log
