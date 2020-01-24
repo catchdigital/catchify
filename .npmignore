@@ -1,7 +1,10 @@
 # Exclude these directories
-/node_modules
-/build
-/dist
+node_modules
+build
+# /dist
+# sass
+# js
+framework
 
 # Error log
 npm-debug.log
@@ -10,5 +13,7 @@ npm-debug.log
 .DS_Store
 
 # Example
-/example/package-lock.json
-/example/node_modules
+example
+
+# GitHub actions
+.github

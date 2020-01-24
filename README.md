@@ -8,8 +8,10 @@ A solid and consistent starting point for CSS and JavaScript.
 **Jump to 'Usage' below for a quicker way to start** or install using `npm` into your existing project like so:
 
 ```
-npm install catchdigital/catchify --save
+npm install catchify-core --save
 ```
+
+_TODO: Update all the following lines_
 
 ## Usage
 1. Copy the contents of the [/example](./example) directory into your project

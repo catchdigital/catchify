@@ -20,7 +20,7 @@ beforeAll(done => {
     };
 
     fs.readFile(
-      path.join(__dirname, '/../../../../build/styles.css'),
+      path.join(__dirname, '/../../../../dist/styles.css'),
       'utf8',
       (err, data) => {
         $('head').append('<style type="text/css">');
