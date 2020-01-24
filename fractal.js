@@ -30,3 +30,6 @@ fractal.docs.set('path', path.join(root, 'docs'));
  * Tell the Fractal web preview plugin where to look for static assets.
  */
 fractal.web.set('static.path', path.join(root, 'public'));
+
+// Builder config
+fractal.web.set('builder.dest', path.join(__dirname, '/docroot'));
