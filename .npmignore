@@ -5,6 +5,7 @@ build
 # sass
 # js
 framework
+fractal.js
 
 # Error log
 npm-debug.log
