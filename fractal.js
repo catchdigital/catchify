@@ -10,6 +10,7 @@ const root = __dirname + '/framework'
  * Require the Fractal module
  */
 const fractal = module.exports = require('@frctl/fractal').create();
+const mandelbrot = require('@frctl/mandelbrot'); // require the Mandelbrot theme module
 
 /*
  * Give your project a title.
@@ -29,7 +30,21 @@ fractal.docs.set('path', path.join(root, 'docs'));
 /*
  * Tell the Fractal web preview plugin where to look for static assets.
  */
-fractal.web.set('static.path', path.join(root, 'public'));
+fractal.web.set('static.path', path.join(__dirname, 'dist'));
 
 // Builder config
 fractal.web.set('builder.dest', path.join(__dirname, '/docroot'));
+
+// create a new instance with custom config options
+const myCustomisedTheme = mandelbrot({
+    skin: "black",
+    styles: [
+      "default",
+      "styles.css",
+      "_base.css",
+      "_buttons.css",
+      "_tabs.css"
+    ]
+});
+
+fractal.web.theme(myCustomisedTheme); // tell Fractal to use the configured theme by default
