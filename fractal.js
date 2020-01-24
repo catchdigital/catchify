@@ -35,16 +35,13 @@ fractal.web.set('static.path', path.join(__dirname, 'dist'));
 // Builder config
 fractal.web.set('builder.dest', path.join(__dirname, '/docroot'));
 
+// Set default preview for all components
+// TODO: If we want to do html instead of hbs
+// fractal.components.set('ext', '.html');
+
 // create a new instance with custom config options
 const myCustomisedTheme = mandelbrot({
-    skin: "black",
-    styles: [
-      "default",
-      "styles.css",
-      "_base.css",
-      "_buttons.css",
-      "_tabs.css"
-    ]
+    skin: "black"
 });
 
 fractal.web.theme(myCustomisedTheme); // tell Fractal to use the configured theme by default
