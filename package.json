@@ -46,6 +46,7 @@
   },
   "devDependencies": {
     "@frctl/fractal": "^1.2.1",
+    "@frctl/mandelbrot": "^1.2.1",
     "babel-preset-node6": "^11.0.0",
     "jasmine": "^2.99.0",
     "jsdom": "^16.0.1",
