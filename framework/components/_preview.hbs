@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <link rel="stylesheet" href="{{ path '/styles.css' }}">
+      <link rel="stylesheet" href="{{ path '/_base.css' }}">
+      <link rel="stylesheet" href="{{ path '/_buttons.css' }}">
+      <link rel="stylesheet" href="{{ path '/_tabs.css' }}">
+      <title>Preview</title>
+  </head>
+  <body>
+
+    {{{ yield }}}
+
+    <script src="{{ path '/bundle.js' }}"></script>
+    <script src="{{ path '/buttons.js' }}"></script>
+    <script src="{{ path '/tabs.js' }}"></script>
+  </body>
+</html>
