@@ -18,9 +18,9 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - run: npm ci
       - run: npm run build
-      - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+      # - run: npm publish
+      #   env:
+      #     NODE_AUTH_TOKEN: ${{secrets.npm_token}}
       - uses: jakejarvis/s3-sync-action@master
         with:
           args: --follow-symlinks --delete
