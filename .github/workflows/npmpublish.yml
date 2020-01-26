@@ -21,6 +21,7 @@ jobs:
       # - run: npm publish
       #   env:
       #     NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+      - run: ln -s ../dist
       - uses: jakejarvis/s3-sync-action@master
         with:
           args: --follow-symlinks --delete
