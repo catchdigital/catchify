@@ -2,6 +2,9 @@
 # Ignore unnecessary files to be push to npmjs
 ##
 
+# Exclude git folder
+.git
+
 # Exclude build directories
 node_modules
 build
