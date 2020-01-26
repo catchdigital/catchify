@@ -13,8 +13,8 @@
     "build:js:components": "ls -A1 js/components/ | while read f; do node scripts/js.js ./node_modules ./js/components/${f%.*}/index.js ./dist/${f%/}.js; done;",
     "test:js": "JASMINE_CONFIG_PATH=js/tests/jasmine.json node ./node_modules/.bin/babel-node --presets node6 ./node_modules/.bin/jasmine",
     "test": "npm run build && npm run test:js",
-    "watch:fractal": "fractal start --sync",
-    "build:fractal": "fractal build"
+    "fractal:watch": "fractal start --sync",
+    "fractal:build": "fractal build"
   },
   "repository": {
     "type": "git",
