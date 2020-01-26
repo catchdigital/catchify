@@ -16,13 +16,12 @@ jobs:
         with:
           node-version: 13
           registry-url: https://registry.npmjs.org/
-      - run: npm i
+      - run: npm ci
       - run: npm run build
       - run: npm run fractal:build
-      # - run: npm publish
-      #   env:
-      #     NODE_AUTH_TOKEN: ${{secrets.npm_token}}
-      - run: ls -l docroot
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
       - uses: jakejarvis/s3-sync-action@master
         with:
           args: --follow-symlinks --delete
