@@ -23,7 +23,7 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
       - uses: jakejarvis/s3-sync-action@master
-        if: succeeded() || failed()
+        if: success() || failure()
         with:
           args: --follow-symlinks --delete
         env:
