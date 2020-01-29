@@ -29,9 +29,9 @@ $screen-lg-min: 1024px;
 // Base variables from materialize.
 // TODO: We should create our base variables.
 // 1. Colours
-$primary-color: black;
-$primary-color-light: black;
-$primary-color-dark: black;
+$primary-color: black !default;
+$primary-color-light: black !default;
+$primary-color-dark: black !default;
 
 $secondary-color: grey;
 $success-color: green;
