@@ -4,6 +4,7 @@
       <meta charset="UTF-8">
       <link rel="stylesheet" href="{{ path '/styles.css' }}">
       <link rel="stylesheet" href="{{ path '/_base.css' }}">
+      <link rel="stylesheet" href="{{ path '/_forms.css' }}">
       <link rel="stylesheet" href="{{ path '/_buttons.css' }}">
       <link rel="stylesheet" href="{{ path '/_tabs.css' }}">
       <link rel="stylesheet" href="{{ path '/_messages.css' }}">
@@ -11,9 +12,12 @@
   </head>
   <body>
 
-    {{{ yield }}}
+    <div class="container">
+      {{{ yield }}}
+    </div>
 
     <script src="{{ path '/bundle.js' }}"></script>
+    <script src="{{ path '/forms.js' }}"></script>
     <script src="{{ path '/buttons.js' }}"></script>
     <script src="{{ path '/tabs.js' }}"></script>
   </body>
