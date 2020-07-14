@@ -1,10 +1,20 @@
-# Exclude these directories
+##
+# Ignore unnecessary files to be push to npmjs
+##
+
+# Exclude git folder
+.git
+
+# Exclude build directories
 node_modules
 build
-# /dist
 # sass
 # js
+
+# Exclude Fractal files
 framework
+fractal.js
+docroot
 
 # Error log
 npm-debug.log

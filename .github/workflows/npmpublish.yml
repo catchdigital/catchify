@@ -2,8 +2,6 @@ name: Node.js Package
 
 on:
   push:
-    branches:
-      - feature/new-ui
     tags:
       - 3.*.*
 
@@ -18,6 +16,17 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - run: npm ci
       - run: npm run build
+      - run: npm run fractal:build
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+      - uses: jakejarvis/s3-sync-action@master
+        if: success() || failure()
+        with:
+          args: --follow-symlinks --delete
+        env:
+          AWS_S3_BUCKET: ${{ secrets.aws_s3_bucket }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.aws_access_key_id }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.aws_secret_access_key }}
+          AWS_REGION: 'eu-west-1'
+          SOURCE_DIR: 'docroot'

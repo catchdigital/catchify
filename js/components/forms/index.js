@@ -12,6 +12,10 @@ document.addEventListener('DOMContentLoaded', function() {
   const selects = document.querySelectorAll('select');
   const selectInstances = M.FormSelect.init(selects, {});
 
+  // Init dropdown
+  const dropdowns = document.querySelectorAll('.dropdown-trigger');
+  const dropdownInstances = M.Dropdown.init(dropdowns, {});
+
   // Init datepicker
   // The format has been set up following Drupal time field standards.
   // TODO: Create a fallback which takes the value from the field data attrs.
