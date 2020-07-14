@@ -11,7 +11,7 @@ const $body = $('body');
 
 // Log the current breakpoint on change or init
 $window.on('breakpointChange breakpointInit', (e, data) =>
-  console(data.breakpoint),
+  console.log(data.breakpoint)
 );
 
 // Initialise breakpoint
