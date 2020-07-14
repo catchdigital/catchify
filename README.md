@@ -74,6 +74,6 @@ Run `npm run watch:fractal` from the root to work on it.
 ### Running static version
 To test the static version of fractal and see how will it look once is deployed, you can do the following:
 
-* Build the static version of fractal: `npm run build:fractal`
+* Build the static version of fractal: `npm run fractal:build`
 * Run it locally: `docker run --rm -v $(pwd)/docroot:/usr/share/nginx/html:ro -p 80:80 nginx`
 * You should see it your browser on `http://localhost`
