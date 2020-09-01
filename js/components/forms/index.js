@@ -9,8 +9,13 @@ import {
 
 document.addEventListener('DOMContentLoaded', function() {
   // Init select box
-  const selects = document.querySelectorAll('select');
-  const selectInstances = M.FormSelect.init(selects, {});
+  const selectFields = document.querySelectorAll('select');
+  selectFields.forEach(selectField => {
+    M.FormSelect.init(selectField, {});
+    selectField.addEventListener('change.initMaterialSelect', () => {
+      M.FormSelect.init(selectField, {});
+    });
+  });
 
   // Init dropdown
   const dropdowns = document.querySelectorAll('.dropdown-trigger');
