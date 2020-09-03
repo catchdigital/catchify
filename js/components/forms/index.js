@@ -32,4 +32,8 @@ document.addEventListener('DOMContentLoaded', function() {
   // TODO: Create a fallback function that convert the value to requirements.
   const timepickers = document.querySelectorAll('.timepicker');
   const timepickerInstances = M.Timepicker.init(timepickers, {'twelveHour': false});
+
+  // Displatch loaded event
+  const event = new Event('CatchifyFormsLoaded');
+  document.dispatchEvent(event);
 });
