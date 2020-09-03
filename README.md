@@ -21,6 +21,13 @@ _TODO: Update all the following lines_
 
 💡 Usage is intended using source es6 JS and SCSS.  The above steps will get you in a position to start using these core elements straight away.
 
+### Event listeners
+
+Catchify provides a number of event listeners, so you can change or extend the behaviour of the components:
+* **CatchifyTabsLoaded**: Triggered when Tabs has been loaded.
+* **CatchifyModalsLoaded**: Triggered when Modals has been loaded.
+* **CatchifyFormsLoaded**: Triggered when Forms has been initiated.
+
 ## Scripts
 Scripts have been added and wired up in the [example package.json](./example/package.json) file as long as you keep the same directory structure.
 
