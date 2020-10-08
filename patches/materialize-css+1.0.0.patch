@@ -1,0 +1,40 @@
+diff --git a/node_modules/materialize-css/dist/js/materialize.js b/node_modules/materialize-css/dist/js/materialize.js
+index b15d3f2..202f8dc 100644
+--- a/node_modules/materialize-css/dist/js/materialize.js
++++ b/node_modules/materialize-css/dist/js/materialize.js
+@@ -2372,7 +2372,6 @@ $jscomp.polyfill = function (e, r, p, m) {
+       value: function _setupTemporaryEventHandlers() {
+         // Use capture phase event handler to prevent click
+         document.body.addEventListener('click', this._handleDocumentClickBound, true);
+-        document.body.addEventListener('touchend', this._handleDocumentClickBound);
+         document.body.addEventListener('touchmove', this._handleDocumentTouchmoveBound);
+         this.dropdownEl.addEventListener('keydown', this._handleDropdownKeydownBound);
+       }
+@@ -2381,7 +2380,6 @@ $jscomp.polyfill = function (e, r, p, m) {
+       value: function _removeTemporaryEventHandlers() {
+         // Use capture phase event handler to prevent click
+         document.body.removeEventListener('click', this._handleDocumentClickBound, true);
+-        document.body.removeEventListener('touchend', this._handleDocumentClickBound);
+         document.body.removeEventListener('touchmove', this._handleDocumentTouchmoveBound);
+         this.dropdownEl.removeEventListener('keydown', this._handleDropdownKeydownBound);
+       }
+diff --git a/node_modules/materialize-css/js/dropdown.js b/node_modules/materialize-css/js/dropdown.js
+index 899bba3..b716284 100644
+--- a/node_modules/materialize-css/js/dropdown.js
++++ b/node_modules/materialize-css/js/dropdown.js
+@@ -159,7 +159,6 @@
+     _setupTemporaryEventHandlers() {
+       // Use capture phase event handler to prevent click
+       document.body.addEventListener('click', this._handleDocumentClickBound, true);
+-      document.body.addEventListener('touchend', this._handleDocumentClickBound);
+       document.body.addEventListener('touchmove', this._handleDocumentTouchmoveBound);
+       this.dropdownEl.addEventListener('keydown', this._handleDropdownKeydownBound);
+     }
+@@ -167,7 +166,6 @@
+     _removeTemporaryEventHandlers() {
+       // Use capture phase event handler to prevent click
+       document.body.removeEventListener('click', this._handleDocumentClickBound, true);
+-      document.body.removeEventListener('touchend', this._handleDocumentClickBound);
+       document.body.removeEventListener('touchmove', this._handleDocumentTouchmoveBound);
+       this.dropdownEl.removeEventListener('keydown', this._handleDropdownKeydownBound);
+     }

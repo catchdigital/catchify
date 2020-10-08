@@ -1,6 +1,6 @@
 {
   "name": "catchify-core",
-  "version": "3.2.0",
+  "version": "3.2.1",
   "description": "A collection of front end files to kickstart projects",
   "main": "js/index.js",
   "scripts": {
@@ -50,7 +50,8 @@
     "babel-preset-node6": "^11.0.0",
     "jasmine": "^2.99.0",
     "jsdom": "^16.4.0",
-    "npm-run-all": "^4.1.5"
+    "npm-run-all": "^4.1.5",
+    "patch-package": "^6.2.2"
   },
   "browserify": {
     "transform": [
