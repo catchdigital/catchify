@@ -8,6 +8,7 @@
 # Exclude build directories
 node_modules
 build
+patches
 # sass
 # js
 
