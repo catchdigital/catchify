@@ -1,8 +1,11 @@
-// Includes
-@import 'includes/includes';
-
 // Base
-@import 'base/base';
+@import 'entrypoints/base';
 
-// Helpers last for easier overrides
-@import 'base/helpers';
+// Form components
+@import 'components/forms/index';
+
+// Tabs components
+@import 'components/tabs/index';
+
+// Modal components
+@import 'components/modal/index';

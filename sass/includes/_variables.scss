@@ -1,9 +1,6 @@
 // Variables
 // ---
 
-// Bootstrap variables
-@import 'bootstrap-sass/assets/stylesheets/bootstrap/variables';
-
 // Colours
 $colour-grey: #999;
 $colour-grey-light: #ccc;
@@ -12,13 +9,42 @@ $colour-grey-dark: #454f58;
 $colour-grey-darkest: #010101;
 
 // Dimensions
-$dimension-border-width: 1px;
+$grid-gutter-width: 2rem !default;
+$dimension-border-width: 0.0625rem;
 $dimension-padding: ($grid-gutter-width / 2);
 $dimension-padding-lg: $grid-gutter-width;
 $dimension-padding-xl: ($grid-gutter-width * 2);
 
 // Fonts
 $font-family: 'Avenir Next', Arial, sans-serif;
-$font-size: 16px;
+$font-size: 1rem;
 $font-colour: $colour-grey-darkest;
 $font-line-height: 1.25;
+
+// width
+$screen-sm-min: 480px;
+$screen-md-min: 768px;
+$screen-lg-min: 1024px;
+
+// Base variables from materialize.
+// TODO: We should create our base variables.
+// 1. Colours
+$primary-color: black !default;
+$primary-color-light: black !default;
+$primary-color-dark: black !default;
+
+$secondary-color: grey;
+$success-color: green;
+$error-color: red;
+$link-color: blue;
+
+// 4. Cards
+$card-link-color: blue;
+
+// 10. Forms
+$input-border-color: blue;
+
+// 15. Photo Slider
+$slider-bg-color: grey;
+$slider-bg-color-light: grey;
+$slider-indicator-color: grey;

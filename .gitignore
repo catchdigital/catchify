@@ -1,6 +1,8 @@
 # Exclude these directories
 /node_modules
 /build
+/dist
+/docroot
 
 # Error log
 npm-debug.log

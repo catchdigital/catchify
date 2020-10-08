@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <link rel="stylesheet" href="{{ path '/styles.css' }}">
+      <link rel="stylesheet" href="{{ path '/_base.css' }}">
+      <link rel="stylesheet" href="{{ path '/_forms.css' }}">
+      <link rel="stylesheet" href="{{ path '/_buttons.css' }}">
+      <link rel="stylesheet" href="{{ path '/_modal.css' }}">
+      <link rel="stylesheet" href="{{ path '/_messages.css' }}">
+      <title>Preview</title>
+  </head>
+  <body>
+
+    <div class="container">
+      {{{ yield }}}
+    </div>
+
+    <script src="{{ path '/bundle.js' }}"></script>
+    <script src="{{ path '/forms.js' }}"></script>
+    <script src="{{ path '/buttons.js' }}"></script>
+    <script src="{{ path '/tabs.js' }}"></script>
+    <script src="{{ path '/modal.js' }}"></script>
+  </body>
+</html>

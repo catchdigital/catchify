@@ -8,8 +8,10 @@ A solid and consistent starting point for CSS and JavaScript.
 **Jump to 'Usage' below for a quicker way to start** or install using `npm` into your existing project like so:
 
 ```
-npm install catchdigital/catchify --save
+npm install catchify-core --save
 ```
+
+_TODO: Update all the following lines_
 
 ## Usage
 1. Copy the contents of the [/example](./example) directory into your project
@@ -18,6 +20,13 @@ npm install catchdigital/catchify --save
 4. Create things 💥
 
 💡 Usage is intended using source es6 JS and SCSS.  The above steps will get you in a position to start using these core elements straight away.
+
+### Event listeners
+
+Catchify provides a number of event listeners, so you can change or extend the behaviour of the components:
+* **CatchifyTabsLoaded**: Triggered when Tabs has been loaded.
+* **CatchifyModalsLoaded**: Triggered when Modals has been loaded.
+* **CatchifyFormsLoaded**: Triggered when Forms has been initiated.
 
 ## Scripts
 Scripts have been added and wired up in the [example package.json](./example/package.json) file as long as you keep the same directory structure.
@@ -61,3 +70,17 @@ npm run format
 
 ## Formatting / Linting
 Catchify now relies on [Prettier](https://github.com/prettier/prettier) which is an opinionated code formatter.  Rather than simply flagging coding standard violations (quote styles, trailing commas, semi colons, line lengths etc) it simply goes in and changes them.  It's strict and unforgiving at first, but it's the most frustration free way to ensure JS code is consistent across projects and developers.
+
+## Running Fractal
+
+### Running dev version
+We got a script to run fractal while developing catchify.
+
+Run `npm run watch:fractal` from the root to work on it.
+
+### Running static version
+To test the static version of fractal and see how will it look once is deployed, you can do the following:
+
+* Build the static version of fractal: `npm run fractal:build`
+* Run it locally: `docker run --rm -v $(pwd)/docroot:/usr/share/nginx/html:ro -p 80:80 nginx`
+* You should see it your browser on `http://localhost`
