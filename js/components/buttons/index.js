@@ -1,1 +1,1 @@
-import { Buttons } from 'materialize-css';
+import { Buttons } from '@materializecss/materialize';
