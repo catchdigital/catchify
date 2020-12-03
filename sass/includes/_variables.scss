@@ -16,10 +16,41 @@ $dimension-padding-lg: $grid-gutter-width;
 $dimension-padding-xl: ($grid-gutter-width * 2);
 
 // Fonts
-$font-family: 'Avenir Next', Arial, sans-serif;
+$font-family: 'Work Sans', Arial, sans-serif;
 $font-size: 1rem;
 $font-colour: $colour-grey-darkest;
-$font-line-height: 1.25;
+
+// Font-sizes
+$font-size-h1: 4.000rem; // 64px
+$font-size-h2: 2.875rem; // 46px
+$font-size-h3: 2.000rem; // 32px
+$font-size-h4: 1.750rem; // 28px
+$font-size-h5: 1.500rem; // 24px
+$font-size-h6: 1.375rem; // 22px
+
+$font-size-lg: 1.250rem; // 20px;
+$font-size-sm: 0.875rem; // 14px;
+$font-size-meta: 0.625rem; // 10px;
+
+$font-size-h1-mobile: 2.250rem; // 36px
+$font-size-h2-mobile: 2.000rem; // 32px
+$font-size-h3-mobile: 1.625rem; // 26px
+$font-size-h4-mobile: 1.500rem; // 24px
+$font-size-h5-mobile: 1.250rem; // 20px
+$font-size-h6-mobile: 1.125rem; // 18px
+
+// Line heights
+$font-line-height: 1.40;
+$font-line-height-heading: 1.17;
+
+// Letter spacing
+$letter-spacing-heading: -0.02rem;
+$letter-spacing: 0;
+$letter-spacing-lg: 3%;
+
+// Font weight
+$font-weight: normal;
+$font-weight-bold: 700;
 
 // width
 $screen-sm-min: 480px;
