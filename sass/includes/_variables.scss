@@ -46,11 +46,20 @@ $font-line-height-heading: 1.17;
 // Letter spacing
 $letter-spacing-heading: -0.02rem;
 $letter-spacing: 0;
-$letter-spacing-lg: 3%;
+$letter-spacing-lg: 0.03rem;
 
 // Font weight
 $font-weight: normal;
 $font-weight-bold: 700;
+
+// Spacing
+$spacing-xs: 0.250rem;  // 4px
+$spacing-sm: 0.500rem;  // 8px
+$spacing: 1.000rem;     // 16px;
+$spacing-md: 1.500rem;  // 24px;
+$spacing-lg: 2.000rem;  // 32px;
+$spacing-xl: 2.500rem;  // 40px
+$spacing-xxl: 3.500rem; // 56px
 
 // width
 $screen-sm-min: 480px;
