@@ -1,11 +1,18 @@
 <h2>Primary</h2>
+<hr>
 <button class="btn">{{ text }}</button>
 <button class="btn btn--small">{{ text }}</button>
-
+<button class="btn btn--disabled" tabindex="-1" disabled>{{ text }}</button>
+<button class="btn btn--small btn--disabled" tabindex="-1" disabled>{{ text }}</button>
+<hr>
 <h2>Secondary</h2>
-<button class="btn btn-secondary">{{ text }}</button>
-<button class="btn btn-secondary btn-secondary--small">{{ text }}</button>
-
+<hr>
+<button class="btn btn--secondary">{{ text }}</button>
+<button class="btn btn--secondary btn--secondary--small">{{ text }}</button>
+<button class="btn btn--secondary btn--secondary--disabled" tabindex="-1" disabled>{{ text }}</button>
+<button class="btn btn--secondary btn--secondary--small btn--secondary--disabled" tabindex="-1" disabled>{{ text }}</button>
+<hr>
 <h2>Ternary</h2>
-<button class="btn btn-ternary">{{ text }}</button>
-<button class="btn btn-ternary btn-ternary--small">{{ text }}</button>
+<button class="btn btn--ternary">{{ text }} <i class="material-icons">chevron_right</i></button>
+<button class="btn btn--ternary btn--ternary--disabled">{{ text }} <i class="material-icons">chevron_right</i></button>
+<hr>
