@@ -21,26 +21,26 @@ $font-size: 1rem !default;
 $font-colour: $colour-grey-darkest !default;
 
 // Font-sizes
-$font-size-h1: 4.000rem !default; // 64px
+$font-size-h1: 4rem !default; // 64px
 $font-size-h2: 2.875rem !default; // 46px
-$font-size-h3: 2.000rem !default; // 32px
-$font-size-h4: 1.750rem !default; // 28px
-$font-size-h5: 1.500rem !default; // 24px
+$font-size-h3: 2rem !default; // 32px
+$font-size-h4: 1.75rem !default; // 28px
+$font-size-h5: 1.5rem !default; // 24px
 $font-size-h6: 1.375rem !default; // 22px
 
-$font-size-lg: 1.250rem !default; // 20px !default;
+$font-size-lg: 1.25rem !default; // 20px !default;
 $font-size-sm: 0.875rem !default; // 14px !default;
 $font-size-meta: 0.625rem !default; // 10px !default;
 
-$font-size-h1-mobile: 2.250rem !default; // 36px
-$font-size-h2-mobile: 2.000rem !default; // 32px
+$font-size-h1-mobile: 2.25rem !default; // 36px
+$font-size-h2-mobile: 2rem !default; // 32px
 $font-size-h3-mobile: 1.625rem !default; // 26px
-$font-size-h4-mobile: 1.500rem !default; // 24px
-$font-size-h5-mobile: 1.250rem !default; // 20px
+$font-size-h4-mobile: 1.5rem !default; // 24px
+$font-size-h5-mobile: 1.25rem !default; // 20px
 $font-size-h6-mobile: 1.125rem !default; // 18px
 
 // Line heights
-$font-line-height: 1.40 !default;
+$font-line-height: 1.4 !default;
 $font-line-height-heading: 1.17 !default;
 
 // Letter spacing
@@ -54,13 +54,13 @@ $font-weight: normal !default;
 $font-weight-bold: 700 !default;
 
 // Spacing
-$spacing-xs: 0.250rem !default;  // 4px
-$spacing-sm: 0.500rem !default;  // 8px
-$spacing: 1.000rem !default;     // 16px
-$spacing-md: 1.500rem !default;  // 24px
-$spacing-lg: 2.000rem !default;  // 32px
-$spacing-xl: 2.500rem !default;  // 40px
-$spacing-xxl: 3.500rem !default; // 56px
+$spacing-xs: 0.25rem !default; // 4px
+$spacing-sm: 0.5rem !default; // 8px
+$spacing: 1rem !default; // 16px
+$spacing-md: 1.5rem !default; // 24px
+$spacing-lg: 2rem !default; // 32px
+$spacing-xl: 2.5rem !default; // 40px
+$spacing-xxl: 3.5rem !default; // 56px
 
 // Border Radius
 $border-radius: 1rem !default;
@@ -69,13 +69,13 @@ $border-radius: 1rem !default;
 $button-border-width: 0.125rem !default; // 2px
 
 // Buttons
-$button-padding-top: 0.906rem;               // 14.5px
-$button-padding-bottom: 0.906rem;            // 14.5px
-$button-padding-left: $spacing-md;           // 24px
-$button-padding-right: $spacing-md;          // 24px
-$button-padding-top-sm: 0.531rem;            // 8.5px
-$button-padding-bottom-sm: 0.531rem;         // 8.5px
-$button-padding-ternary-left: 0;             // 0
+$button-padding-top: 0.906rem; // 14.5px
+$button-padding-bottom: 0.906rem; // 14.5px
+$button-padding-left: $spacing-md; // 24px
+$button-padding-right: $spacing-md; // 24px
+$button-padding-top-sm: 0.531rem; // 8.5px
+$button-padding-bottom-sm: 0.531rem; // 8.5px
+$button-padding-ternary-left: 0; // 0
 $button-padding-ternary-right: $spacing-xxl; // 56px
 
 // width
@@ -84,12 +84,13 @@ $screen-md-min: 768px !default;
 $screen-lg-min: 1024px !default;
 
 // Box shadow
-$box-shadow: 0px 6px 2px -4px rgba(0, 0, 0, 0.1), 0px 2px 20px rgba(0, 0, 0, 0.15);
+$box-shadow: 0px 6px 2px -4px rgba(0, 0, 0, 0.1),
+  0px 2px 20px rgba(0, 0, 0, 0.15);
 
 // Transitions
-$transition-duration: .4s;
+$transition-duration: 0.4s;
 $transition-duration-none: 0s;
-$transition-easing: cubic-bezier(0.785,0.135,0.15,0.86);
+$transition-easing: cubic-bezier(0.785, 0.135, 0.15, 0.86);
 
 // Base variables for materialize.
 // 1. Colours

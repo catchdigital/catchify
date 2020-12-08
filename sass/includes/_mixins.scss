@@ -30,7 +30,7 @@
  * @param  {String} $font - The font name to use. Default $font-family-icon
  * @param  {String} $list - The icon list to use. Default $icons-list
  */
- @mixin icon($icon) {
+@mixin icon($icon) {
   content: map_get($icons-list, $icon);
   font-family: $font-icon;
 }
