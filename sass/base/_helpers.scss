@@ -53,6 +53,16 @@
   padding-top: $dimension-padding-lg;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
 .hidden {
   display: none;
 }

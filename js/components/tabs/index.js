@@ -1,4 +1,4 @@
-import { Tabs } from 'materialize-css';
+import { Tabs } from '@materializecss/materialize';
 
 document.addEventListener('DOMContentLoaded', function() {
   const el = document.querySelectorAll('.tabs');

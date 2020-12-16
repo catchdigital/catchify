@@ -76,7 +76,7 @@ Catchify now relies on [Prettier](https://github.com/prettier/prettier) which is
 ### Running dev version
 We got a script to run fractal while developing catchify.
 
-Run `npm run watch:fractal` from the root to work on it.
+Run `npm run fractal:watch` from the root to work on it.
 
 ### Running static version
 To test the static version of fractal and see how will it look once is deployed, you can do the following:
