@@ -2,49 +2,118 @@
 // ---
 
 // Colours
-$colour-grey: #999;
-$colour-grey-light: #ccc;
-$colour-grey-lightest: #f4f6f8;
-$colour-grey-dark: #454f58;
-$colour-grey-darkest: #010101;
+$colour-grey: #999 !default;
+$colour-grey-light: #ccc !default;
+$colour-grey-lightest: #f4f6f8 !default;
+$colour-grey-dark: #454f58 !default;
+$colour-grey-darkest: #010101 !default;
 
 // Dimensions
 $grid-gutter-width: 2rem !default;
-$dimension-border-width: 0.0625rem;
-$dimension-padding: ($grid-gutter-width / 2);
-$dimension-padding-lg: $grid-gutter-width;
-$dimension-padding-xl: ($grid-gutter-width * 2);
+$dimension-border-width: 0.0625rem !default;
+$dimension-padding: ($grid-gutter-width / 2) !default;
+$dimension-padding-lg: $grid-gutter-width !default;
+$dimension-padding-xl: ($grid-gutter-width * 2) !default;
 
 // Fonts
-$font-family: 'Avenir Next', Arial, sans-serif;
-$font-size: 1rem;
-$font-colour: $colour-grey-darkest;
-$font-line-height: 1.25;
+$font-family: 'Work Sans', Arial, sans-serif !default;
+$font-size: 1rem !default;
+$font-colour: $colour-grey-darkest !default;
+
+// Font-sizes
+$font-size-h1: 4rem !default; // 64px
+$font-size-h2: 2.875rem !default; // 46px
+$font-size-h3: 2rem !default; // 32px
+$font-size-h4: 1.75rem !default; // 28px
+$font-size-h5: 1.5rem !default; // 24px
+$font-size-h6: 1.375rem !default; // 22px
+
+$font-size-lg: 1.25rem !default; // 20px !default;
+$font-size-sm: 0.875rem !default; // 14px !default;
+$font-size-meta: 0.625rem !default; // 10px !default;
+
+$font-size-h1-mobile: 2.25rem !default; // 36px
+$font-size-h2-mobile: 2rem !default; // 32px
+$font-size-h3-mobile: 1.625rem !default; // 26px
+$font-size-h4-mobile: 1.5rem !default; // 24px
+$font-size-h5-mobile: 1.25rem !default; // 20px
+$font-size-h6-mobile: 1.125rem !default; // 18px
+
+// Line heights
+$font-line-height: 1.4 !default;
+$font-line-height-heading: 1.17 !default;
+
+// Letter spacing
+$letter-spacing-heading: -0.02rem !default;
+$letter-spacing: 0 !default;
+$letter-spacing-lg: 0.03rem !default;
+$letter-spacing-btn: 0.04rem !default;
+
+// Font weight
+$font-weight: normal !default;
+$font-weight-bold: 700 !default;
+
+// Spacing
+$spacing-xs: 0.25rem !default; // 4px
+$spacing-sm: 0.5rem !default; // 8px
+$spacing: 1rem !default; // 16px
+$spacing-md: 1.5rem !default; // 24px
+$spacing-lg: 2rem !default; // 32px
+$spacing-xl: 2.5rem !default; // 40px
+$spacing-xxl: 3.5rem !default; // 56px
+
+// Border Radius
+$border-radius: 1rem !default;
+
+// Borders
+$button-border-width: 0.125rem !default; // 2px
+
+// Buttons
+$button-padding-top: 0.906rem; // 14.5px
+$button-padding-bottom: 0.906rem; // 14.5px
+$button-padding-left: $spacing-md; // 24px
+$button-padding-right: $spacing-md; // 24px
+$button-padding-top-sm: 0.531rem; // 8.5px
+$button-padding-bottom-sm: 0.531rem; // 8.5px
+$button-padding-ternary-left: 0; // 0
+$button-padding-ternary-right: $spacing-xxl; // 56px
 
 // width
-$screen-sm-min: 480px;
-$screen-md-min: 768px;
-$screen-lg-min: 1024px;
+$screen-sm-min: 480px !default;
+$screen-md-min: 768px !default;
+$screen-lg-min: 1024px !default;
 
-// Base variables from materialize.
-// TODO: We should create our base variables.
+// Box shadow
+$box-shadow: 0px 6px 2px -4px rgba(0, 0, 0, 0.1),
+  0px 2px 20px rgba(0, 0, 0, 0.15);
+
+// Transitions
+$transition-duration: 0.4s;
+$transition-duration-none: 0s;
+$transition-easing: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+
+// Base variables for materialize.
 // 1. Colours
 $primary-color: black !default;
 $primary-color-light: black !default;
 $primary-color-dark: black !default;
 
-$secondary-color: grey;
-$success-color: green;
-$error-color: red;
-$link-color: blue;
+$button-color: #4b4ded;
+
+$color-neutral: #1e1e1e;
+
+$secondary-color: grey !default;
+$success-color: green !default;
+$error-color: red !default;
+$link-color: blue !default;
 
 // 4. Cards
-$card-link-color: blue;
+$card-link-color: blue !default;
 
 // 10. Forms
-$input-border-color: blue;
+$input-border-color: blue !default;
 
 // 15. Photo Slider
-$slider-bg-color: grey;
-$slider-bg-color-light: grey;
-$slider-indicator-color: grey;
+$slider-bg-color: grey !default;
+$slider-bg-color-light: grey !default;
+$slider-indicator-color: grey !default;

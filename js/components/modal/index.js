@@ -1,4 +1,4 @@
-import { Modal } from 'materialize-css';
+import { Modal } from '@materializecss/materialize';
 
 document.addEventListener('DOMContentLoaded', function() {
   const el = document.querySelectorAll('.modal');
