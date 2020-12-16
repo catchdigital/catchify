@@ -1,4 +1,4 @@
-diff --git a/node_modules/materialize-css/dist/js/materialize.js b/node_modules/materialize-css/dist/js/materialize.js
+diff --git a/node_modules/@materializecss/materialize/dist/js/materialize.js b/node_modules/@materializecss/materialize/dist/js/materialize.js
 index b15d3f2..202f8dc 100644
 --- a/node_modules/materialize-css/dist/js/materialize.js
 +++ b/node_modules/materialize-css/dist/js/materialize.js
