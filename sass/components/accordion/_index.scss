@@ -1,0 +1,51 @@
+.accordion {
+  &__trigger {
+    position: relative;
+    display: block;
+
+    i {
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%);
+      transition: transform $transition-duration $transition-easing;
+
+      .is-open & {
+        transform: translateY(-50%) rotate(180deg);
+      }
+
+    }
+  }
+
+  &__content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height $transition-duration $transition-easing;
+
+    .is-open & {
+      max-height: 2000px;
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .accordion {
+    $self: &;
+
+    &__trigger {
+      #{ $self }--mobile-only & {
+        display: inline-block;
+
+        i {
+          display: none;
+        }
+      }
+    }
+
+    &__content {
+      #{ $self }--mobile-only & {
+        max-height: none;
+      }
+    }
+  }
+}
