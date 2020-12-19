@@ -1,6 +1,6 @@
 {
   "name": "catchify-core",
-  "version": "3.3.0",
+  "version": "3.4.0",
   "description": "A collection of front end files to kickstart projects",
   "main": "js/index.js",
   "scripts": {
@@ -46,7 +46,7 @@
     "prettier": "^1.19.1"
   },
   "engines": {
-    "node": "~6.0.0"
+    "node": "^6.0.0"
   },
   "devDependencies": {
     "@frctl/fractal": "^1.5.1",
