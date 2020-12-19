@@ -14,15 +14,9 @@
  */
 const defaultOptions = {
   // Template must be encapsulated HTML
-  template: '<span>',
+  template: 'span',
   // CSS properties appled to each element
-  styles: {
-    position: 'absolute',
-    left: 0,
-    bottom: 0,
-    width: '1px',
-    height: '1px',
-  },
+  styles: `position: absolute; left: 0; bottom: 0; width: 1px; height: 1px;`,
   // Combines with sizes to create (prefix + size)
   classPrefix: 'visible-',
   // The different sizes to create elements for
@@ -52,33 +46,33 @@ const breakpoint = {
 
     // For every given breakpoints create a helper flag element
     this.options.breakpoints.forEach(size => {
-      const $element = jQuery(this.options.template);
+      const $element = document.createElement(this.options.template);
 
       // Setup element properties
-      $element.css(this.options.styles);
-      $element.attr('class', this.options.classPrefix + size);
-      $element.attr(this.options.dataAttrSelector, size);
+      $element.setAttribute('style', this.options.styles);
+      $element.setAttribute('class', this.options.classPrefix + size);
+      $element.setAttribute(this.options.dataAttrSelector, size);
 
       // Add element to body
-      jQuery('body').append($element);
+      document.querySelector('body').append($element);
     });
 
     // Trigger init event
-    jQuery(window).trigger(this.options.breakpointInitEvent, {
-      breakpoint: this.get(),
-    });
+    const event = new CustomEvent(this.options.breakpointInitEvent, { detail: {breakpoint: this.get()} });
+
+    document.dispatchEvent(event);
 
     // Watch for resizes
-    jQuery(window).resize(() => {
+    window.addEventListener('resize', () => {
       clearTimeout(changeTimeoutId);
 
       changeTimeoutId = setTimeout(() => {
         if (lastCalculatedSize !== this.get()) {
           lastCalculatedSize = this.get();
 
-          jQuery(window).trigger(this.options.breakpointChangeEvent, {
-            breakpoint: lastCalculatedSize,
-          });
+          const event = new CustomEvent(this.options.breakpointChangeEvent, { detail: {breakpoint: lastCalculatedSize,} });
+
+          document.dispatchEvent(event);
         }
       }, this.options.resizeTimeout);
     });
@@ -89,9 +83,14 @@ const breakpoint = {
    * @return {String}
    */
   get() {
-    return jQuery(`[${this.options.dataAttrSelector}]:visible:last`).attr(
-      this.options.dataAttrSelector,
-    );
+    const $element = document.querySelectorAll(`[${this.options.dataAttrSelector}]`);
+    let breakpoint = ''
+    $element.forEach(element => {
+      if (element.offsetWidth > 0 && element.offsetHeight > 0) {
+        breakpoint = element.getAttribute(this.options.dataAttrSelector);
+      }
+    });
+    return breakpoint;
   },
 
   /**
