@@ -70,14 +70,14 @@ $input-border-width: 0.063rem !default; // 1px
 $button-border-width: 0.125rem !default; // 2px
 
 // Buttons
-$button-padding-top: 0.906rem; // 14.5px
-$button-padding-bottom: 0.906rem; // 14.5px
-$button-padding-left: $spacing-md; // 24px
-$button-padding-right: $spacing-md; // 24px
-$button-padding-top-sm: 0.531rem; // 8.5px
-$button-padding-bottom-sm: 0.531rem; // 8.5px
-$button-padding-ternary-left: 0; // 0
-$button-padding-ternary-right: $spacing-xxl; // 56px
+$button-padding-top: 0.906rem !default; // 14.5px
+$button-padding-bottom: 0.906rem !default; // 14.5px
+$button-padding-left: $spacing-md !default; // 24px
+$button-padding-right: $spacing-md !default; // 24px
+$button-padding-top-sm: 0.531rem !default; // 8.5px
+$button-padding-bottom-sm: 0.531rem !default; // 8.5px
+$button-padding-ternary-left: 0 !default; // 0
+$button-padding-ternary-right: $spacing-xxl !default; // 56px
 
 // width
 $screen-sm-min: 480px !default;
@@ -86,12 +86,12 @@ $screen-lg-min: 1024px !default;
 
 // Box shadow
 $box-shadow: 0px 6px 2px -4px rgba(0, 0, 0, 0.1),
-  0px 2px 20px rgba(0, 0, 0, 0.15);
+  0px 2px 20px rgba(0, 0, 0, 0.15) !default;
 
 // Transitions
-$transition-duration: 0.4s;
-$transition-duration-none: 0s;
-$transition-easing: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+$transition-duration: 0.4s !default;
+$transition-duration-none: 0s !default;
+$transition-easing: cubic-bezier(0.785, 0.135, 0.15, 0.86) !default;
 
 // Base variables for materialize.
 // 1. Colours
@@ -99,7 +99,7 @@ $primary-color: black !default;
 $primary-color-light: black !default;
 $primary-color-dark: black !default;
 
-$button-color: #4b4ded;
+$button-color: #4b4ded !default;
 
 $color-neutral-darkest: #1e1e1e !default;
 $color-neutral-dark: #54545e !default;
@@ -127,7 +127,7 @@ $input-padding-left: 1.000rem !default;
 $input-margin: 1.5rem 0 !default;
 $input-disabled-color: $color-neutral-light !default;
 $input-focus-color: $button-color !default;
-$focus-box-shadow: 0px 0px 0px 4px rgba($button-color, 0.25);
+$focus-box-shadow: 0px 0px 0px 4px rgba($button-color, 0.25) !default;
 
 // 15. Photo Slider
 $slider-bg-color: grey !default;
