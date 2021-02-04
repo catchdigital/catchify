@@ -15,6 +15,7 @@
     "test": "npm run build && npm run test:js",
     "watch:css": "chokidar '**/*.scss' -c 'npm run build:css:components'",
     "watch:js": "chokidar '**/*.js' -c 'npm run build:js:components'",
+    "watch": "chokidar 'js/**/*.js' 'sass/**/*.scss' -c 'npm run build'",
     "fractal:watch": "fractal start --sync",
     "fractal:build": "fractal build",
     "postinstall": "patch-package"
