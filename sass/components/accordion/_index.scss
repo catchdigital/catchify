@@ -45,6 +45,7 @@
     &__content {
       #{ $self }--mobile-only & {
         max-height: none;
+        overflow: visible;
       }
     }
   }
