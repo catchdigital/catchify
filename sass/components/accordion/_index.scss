@@ -2,6 +2,7 @@
   &__trigger {
     position: relative;
     display: block;
+    cursor: pointer;
 
     i {
       position: absolute;
@@ -35,6 +36,7 @@
     &__trigger {
       #{ $self }--mobile-only & {
         display: inline-block;
+        cursor: default;
 
         i {
           display: none;
