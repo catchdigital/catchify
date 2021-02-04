@@ -85,6 +85,13 @@ document.addEventListener('DOMContentLoaded', function() {
   };
 
   $trigger.forEach((el) => {
+    if (!isMobile()) {
+      const $element = el.closest(SELECTOR.ACCORDION);
+
+      if ($element.classList.contains(CLASS.MOBILE_ONLY)) {
+        el.setAttribute('tabindex', '-1');
+      }
+    }
     el.addEventListener('click', handleButtonClick);
     el.addEventListener('keypress', handleButtonKeypress);
   });
