@@ -1,14 +1,14 @@
 {
   "name": "catchify-core",
-  "version": "3.5.2",
+  "version": "3.6.0",
   "description": "A collection of front end files to kickstart projects",
   "main": "js/index.js",
   "scripts": {
     "format:js": "node scripts/format.js ./node_modules './js/**/*.js'",
     "format:scss": "node scripts/format.js ./node_modules './sass/**/*.scss'",
     "build": "npm run format:scss && npm run format:js && npm-run-all build:* build:**",
-    "build:css": "node scripts/css.js ./node_modules ./sass/styles.scss ./dist ./dist/styles.css",
-    "build:css:components": "ls -A1 sass/entrypoints/ | while read f; do node scripts/css.js ./node_modules ./sass/entrypoints/${f%.*}.scss ./dist ./dist/${f%.*}.css; done;",
+    "build:css": "sass -I node_modules sass/styles.scss dist/styles.css",
+    "build:css:components": "sass ./sass/entrypoints:./dist",
     "build:js": "node scripts/js.js ./node_modules ./js/index.js ./dist/bundle.js",
     "build:js:components": "ls -A1 js/components/ | while read f; do node scripts/js.js ./node_modules ./js/components/${f%.*}/index.js ./dist/${f%/}.js; done;",
     "test:js": "JASMINE_CONFIG_PATH=js/tests/jasmine.json node ./node_modules/.bin/babel-node --presets node6 ./node_modules/.bin/jasmine",
@@ -40,11 +40,11 @@
     "bootstrap": "^4.5.3",
     "browserify": "^16.5.2",
     "log-timestamp": "^0.1.2",
-    "node-sass": "^4.14.1",
     "node.normalize.scss": "^3.0.3",
     "patch-package": "^6.2.2",
     "postcss-cli": "^7.1.2",
-    "prettier": "^1.19.1"
+    "prettier": "^1.19.1",
+    "sass": "^1.32.8"
   },
   "engines": {
     "node": "^6.0.0"
