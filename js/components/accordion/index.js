@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   const handleButtonClick = (e) => {
     const $element = e.target.closest(SELECTOR.ACCORDION);
-    e.target.blur();
+    $element.querySelector(SELECTOR.TRIGGER).blur();
 
     if ($element.classList.contains(CLASS.MOBILE_ONLY)) {
       if (isMobile()) {
