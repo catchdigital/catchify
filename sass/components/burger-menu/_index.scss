@@ -1,0 +1,81 @@
+.burger-menu {
+  width: $dimension-burger-menu;
+  height: calc(#{$dimension-burger-menu} * 0.75);
+  position: relative;
+  transform: rotate(0deg);
+  transition: .5s ease-in-out;
+  background: none;
+  border: none;
+  margin: 20px;
+}
+
+.burger-menu span {
+  display: block;
+  position: absolute;
+  height: calc(#{$dimension-burger-menu} * 0.15);
+  width: 50%;
+  background: red;
+  opacity: 1;
+  transform: rotate(0deg);
+  transition: .25s ease-in-out;
+}
+
+.burger-menu span:nth-child(even) {
+  left: 50%;
+  border-radius: 0 calc(#{$dimension-burger-menu} * 0.15) calc(#{$dimension-burger-menu} * 0.15) 0;
+}
+
+.burger-menu span:nth-child(odd) {
+  left:0px;
+  border-radius: calc(#{$dimension-burger-menu} * 0.15) 0 0 calc(#{$dimension-burger-menu} *  0.15);
+}
+
+.burger-menu span:nth-child(1), .burger-menu span:nth-child(2) {
+  top: 0px;
+}
+
+.burger-menu span:nth-child(3), .burger-menu span:nth-child(4) {
+  top: calc(#{$dimension-burger-menu} * 0.333);
+}
+
+.burger-menu span:nth-child(5), .burger-menu span:nth-child(6) {
+  top: calc(#{$dimension-burger-menu} * 0.666);
+}
+
+.burger-menu.is-active span:nth-child(1),.burger-menu.is-active span:nth-child(6) {
+  transform: rotate(45deg);
+}
+
+.burger-menu.is-active span:nth-child(2),.burger-menu.is-active span:nth-child(5) {
+  transform: rotate(-45deg);
+}
+
+.burger-menu.is-active span:nth-child(1) {
+  left: calc(#{$dimension-burger-menu} *  0.083);
+  top: calc(#{$dimension-burger-menu} *  0.116);
+}
+
+.burger-menu.is-active span:nth-child(2) {
+  left: calc(50% - 5px);
+  top: calc(#{$dimension-burger-menu} * 0.116);
+}
+
+.burger-menu.is-active span:nth-child(3) {
+  left: -50%;
+  opacity: 0;
+}
+
+.burger-menu.is-active span:nth-child(4) {
+  left: 100%;
+  opacity: 0;
+}
+
+.burger-menu.is-active span:nth-child(5) {
+  left: calc(#{$dimension-burger-menu} * 0.083);
+  top: calc(#{$dimension-burger-menu} * 0.483);
+}
+
+.burger-menu.is-active span:nth-child(6) {
+  left: calc(50% - #{$dimension-burger-menu} * 0.083);
+  top: calc(#{$dimension-burger-menu} * 0.5);
+}
