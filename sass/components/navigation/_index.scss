@@ -135,7 +135,7 @@
 }
 
 @include media-breakpoint-up(md) {
-  .shp-main-menu {
+  .primary-navigation {
     $self: &;
     flex-direction: row;
     visibility: visible;
