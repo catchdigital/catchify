@@ -1,0 +1,247 @@
+.primary-navigation {
+  $self: &; // set self as scope
+  list-style-type: none;
+  padding: 0;
+  background: white;
+  z-index: 3;
+  flex-direction: column;
+  display: flex;
+  visibility: hidden;
+  opacity: 0;
+  top: -100%;
+  height: 0;
+  transition: all 0.2s ease-in;
+
+  &__list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__list-item {
+    display: flex;
+    align-items: center;
+
+    .shp-icon {
+      margin-right: 0.2em;
+    }
+
+    &:hover {
+      > span {
+        font-weight: $font-weight-bold;
+      }
+    }
+    
+    &--level-0 {
+      margin-bottom: 0.5em;
+      cursor: pointer;
+      text-align: center;
+
+      &:after {
+        content: '>';
+      }
+    }
+
+    &--level-1 {
+      cursor: pointer;
+      padding: 0.5em 0;
+      margin: 1em 0;
+      transition: margin font-size 0.2s ease-out;
+
+      &.is-active > span {
+        text-decoration: underline;
+      }
+    }
+
+    &--level-2 {
+      margin: 1em 0 2em;
+      display: block;
+
+      span {
+        font-weight: bold;
+        display: block;
+        padding: 1em 0;
+        cursor: default;
+      }
+    }
+
+    &--level-3 {
+      padding: 0.5em 0;
+    }
+  }
+
+  &__title {
+    font-weight: bold;
+    transition: all 0.1s linear;
+    font-size: 120%;
+  }
+
+  &__list {
+    width: 100%;
+  }
+
+  &__sub-menu {
+    padding: 1em;
+    position: absolute;
+    left: 0;
+    top: 0;
+    min-height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+    z-index: 1;
+    cursor: default;
+
+    &--level-0 {
+      background: $color-neutral;
+      visibility: hidden;
+      opacity: 0;
+      left: 100%;
+      height: 0;
+      transition: all 0.2s ease-in;
+
+      &.is-active {
+        visibility: visible;
+        opacity: 1;
+        left: 0;
+        height: fit-content;
+      }
+    }
+
+    &--level-1 {
+      left: 100%;
+      top: 0;
+      transition: left 0.2s ease-in;
+      background: white;
+      border-top: 1px solid $color-neutral;
+      visibility: hidden;
+
+      #{ $self }__promo {
+        border-color: $color-neutral;
+      }
+
+      &.is-active {
+        left: 0;
+        visibility: visible;
+      }
+    }
+  }
+
+  &.is-active {
+    visibility: visible;
+    opacity: 1;
+    top: 0;
+    height: fit-content;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .shp-main-menu {
+    $self: &;
+    flex-direction: row;
+    visibility: visible;
+    opacity: 1;
+    top: 0;
+    height: fit-content;
+
+    &__device-toggle {
+      // see burger-menu.scss for animations
+      display: none;
+    }
+
+    &__list-item {
+      &--level-0 {
+        margin-right: 1em;
+        text-align: left;
+        
+        &:after {
+          content: none;
+        }
+
+        &.is-active {
+          border-bottom: 2px solid red;
+        }
+      }
+    }
+
+    &__level-0-item {
+      
+    }
+
+    &__back-btn {
+      display: none;
+    }
+
+    &__content {
+      display: flex;
+    }
+
+    &__list {
+      flex: 2;
+    }
+
+    &__promo {
+      max-width: 300px;
+      flex: 1;
+      padding-left: 1em;
+      border-left: 2px solid white;
+
+      img {
+        max-height: 300px;
+      }
+    }
+
+    &__sub-menu {
+      top: $dimension-main-nav-desktop-height;
+      min-height: 60vh;
+
+      &--level-0 {
+        left: 0;
+        top: -100%;
+        transition: all 0s ease-in;
+
+        &.is-active {
+          top: $dimension-main-nav-desktop-height;
+        }
+      }
+
+      &--level-1 {
+        top: 0;
+        width: calc(100vw - #{$dimension-main-nav-shrink-width});
+
+        &.is-active {
+          left: $dimension-main-nav-shrink-width;
+        }
+      }
+
+      &--two-column {
+        #{ $self }__list {
+          column-count: 2;
+        }
+
+        &#{ $self }__sub-menu--has-submenu-active {
+          #{ $self }__list {
+            column-count: 1;
+          }
+        }
+      }
+
+      &--has-submenu-active {
+        > #{ $self }__title {
+          max-height: 0;
+          opacity: 0;
+          margin: 0;
+          visibility: hidden;
+        }
+
+        > #{ $self }__promo {
+          display: none;
+        }
+
+        #{ $self }__list-item--level-1 {
+          margin: 0.1em 0;
+          font-size: 90%;
+        }
+      }
+    }
+  }
+}

@@ -14,6 +14,9 @@ $dimension-border-width: 0.0625rem !default;
 $dimension-padding: ($grid-gutter-width / 2) !default;
 $dimension-padding-lg: $grid-gutter-width !default;
 $dimension-padding-xl: ($grid-gutter-width * 2) !default;
+$dimension-burger-menu: 50px !important;
+$dimension-main-nav-desktop-height: 75px !important;
+$dimension-main-nav-shrink-width: 300px !important;
 
 // Fonts
 $font-family: 'Work Sans', Arial, sans-serif !default;
