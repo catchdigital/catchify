@@ -1,3 +1,5 @@
+@use "sass:math";
+
 // Variables
 // ---
 
@@ -11,7 +13,7 @@ $colour-grey-darkest: #010101 !default;
 // Dimensions
 $grid-gutter-width: 2rem !default;
 $dimension-border-width: 0.0625rem !default;
-$dimension-padding: ($grid-gutter-width / 2) !default;
+$dimension-padding: math.div($grid-gutter-width, 2) !default;
 $dimension-padding-lg: $grid-gutter-width !default;
 $dimension-padding-xl: ($grid-gutter-width * 2) !default;
 
@@ -28,7 +30,7 @@ $font-size-h4: 1.75rem !default; // 28px
 $font-size-h5: 1.5rem !default; // 24px
 $font-size-h6: 1.375rem !default; // 22px
 
-$font-size-lg: 1.250rem !default; // 20px
+$font-size-lg: 1.25rem !default; // 20px
 $font-size-sm: 0.875rem !default; // 14px
 $font-size-meta: 0.625rem !default; // 10px
 
@@ -121,9 +123,9 @@ $label-font-size: $font-size !default;
 $input-border-radius: $border-radius !default;
 $input-font-size: $font-size !default;
 $input-padding-top: 0.813rem !default;
-$input-padding-right: 1.000rem !default;
+$input-padding-right: 1rem !default;
 $input-padding-bottom: 0.813rem !default;
-$input-padding-left: 1.000rem !default;
+$input-padding-left: 1rem !default;
 $input-margin: 1.5rem 0 !default;
 $input-disabled-color: $color-neutral-light !default;
 $input-focus-color: $button-color !default;

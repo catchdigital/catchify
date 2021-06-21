@@ -58,7 +58,9 @@ const breakpoint = {
     });
 
     // Trigger init event
-    const event = new CustomEvent(this.options.breakpointInitEvent, { detail: {breakpoint: this.get()} });
+    const event = new CustomEvent(this.options.breakpointInitEvent, {
+      detail: { breakpoint: this.get() },
+    });
 
     document.dispatchEvent(event);
 
@@ -70,7 +72,9 @@ const breakpoint = {
         if (lastCalculatedSize !== this.get()) {
           lastCalculatedSize = this.get();
 
-          const event = new CustomEvent(this.options.breakpointChangeEvent, { detail: {breakpoint: lastCalculatedSize,} });
+          const event = new CustomEvent(this.options.breakpointChangeEvent, {
+            detail: { breakpoint: lastCalculatedSize },
+          });
 
           document.dispatchEvent(event);
         }
@@ -83,8 +87,10 @@ const breakpoint = {
    * @return {String}
    */
   get() {
-    const $element = document.querySelectorAll(`[${this.options.dataAttrSelector}]`);
-    let breakpoint = ''
+    const $element = document.querySelectorAll(
+      `[${this.options.dataAttrSelector}]`,
+    );
+    let breakpoint = '';
     $element.forEach(element => {
       if (element.offsetWidth > 0 && element.offsetHeight > 0) {
         breakpoint = element.getAttribute(this.options.dataAttrSelector);

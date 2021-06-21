@@ -70,6 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   const handleButtonClick = (e) => {
     const $element = e.target.closest(SELECTOR.ACCORDION);
+    $element.querySelector(SELECTOR.TRIGGER).blur();
 
     if ($element.classList.contains(CLASS.MOBILE_ONLY)) {
       if (isMobile()) {
@@ -85,6 +86,18 @@ document.addEventListener('DOMContentLoaded', function() {
   };
 
   $trigger.forEach((el) => {
+    if (!isMobile()) {
+      const $element = el.closest(SELECTOR.ACCORDION);
+
+      if ($element.classList.contains(CLASS.MOBILE_ONLY)) {
+        el.setAttribute('tabindex', '-1');
+        $element
+        .querySelectorAll('.accordion__content [tabindex="-1"]')
+        .forEach((el) => {
+          el.setAttribute('tabindex', '0');
+        });
+      }
+    }
     el.addEventListener('click', handleButtonClick);
     el.addEventListener('keypress', handleButtonKeypress);
   });
