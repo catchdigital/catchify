@@ -4,6 +4,7 @@ on:
   push:
     tags:
       - 3.*.*
+      - 4.*.*
 
 jobs:
   publish-npm:
