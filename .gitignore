@@ -10,6 +10,5 @@ npm-debug.log
 # Silly Macs
 .DS_Store
 
-# Example
-/example/package-lock.json
-/example/node_modules
+# Fractal
+/framework/node_modules
