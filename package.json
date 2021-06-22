@@ -1,6 +1,6 @@
 {
   "name": "catchify-core",
-  "version": "4.0.3",
+  "version": "4.0.4",
   "description": "A collection of front end files to kickstart projects",
   "main": "js/index.js",
   "scripts": {
