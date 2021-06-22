@@ -1,6 +1,6 @@
 {
   "name": "catchify-core",
-  "version": "4.0.2",
+  "version": "4.0.3",
   "description": "A collection of front end files to kickstart projects",
   "main": "js/index.js",
   "scripts": {
@@ -8,7 +8,7 @@
     "format:scss": "node scripts/format.js ./node_modules './sass/**/*.scss'",
     "build": "npm run format:scss && npm run format:js && npm-run-all build:* build:**",
     "build:css": "sass -I node_modules sass/styles.scss dist/styles.css",
-    "build:css:components": "sass ./sass/entrypoints:./dist",
+    "build:css:components": "sass -I node_modules ./sass/entrypoints:./dist",
     "build:js": "node scripts/js.js ./node_modules ./js/index.js ./dist/bundle.js",
     "build:js:components": "ls -A1 js/components/ | while read f; do node scripts/js.js ./node_modules ./js/components/${f%.*}/index.js ./dist/${f%/}.js; done;",
     "test:js": "JASMINE_CONFIG_PATH=js/tests/jasmine.json node ./node_modules/.bin/babel-node --presets node6 ./node_modules/.bin/jasmine",
