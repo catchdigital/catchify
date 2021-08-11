@@ -34,6 +34,6 @@ document.addEventListener('DOMContentLoaded', function() {
   const timepickerInstances = M.Timepicker.init(timepickers, {'twelveHour': false});
 
   // Displatch loaded event
-  const event = new Event('CatchifyFormsLoaded');
+  const event = new CustomEvent('CatchifyFormsLoaded');
   document.dispatchEvent(event);
 });

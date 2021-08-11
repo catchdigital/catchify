@@ -54,7 +54,7 @@ const breakpoint = {
       $element.setAttribute(this.options.dataAttrSelector, size);
 
       // Add element to body
-      document.querySelector('body').append($element);
+      document.querySelector('body').appendChild($element);
     });
 
     // Trigger init event
