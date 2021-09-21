@@ -60,6 +60,7 @@ const breakpoint = {
     // Trigger init event
     const event = new CustomEvent(this.options.breakpointInitEvent, {
       detail: { breakpoint: this.get() },
+      bubbles: true,
     });
 
     document.dispatchEvent(event);
@@ -74,6 +75,7 @@ const breakpoint = {
 
           const event = new CustomEvent(this.options.breakpointChangeEvent, {
             detail: { breakpoint: lastCalculatedSize },
+            bubbles: true,
           });
 
           document.dispatchEvent(event);
