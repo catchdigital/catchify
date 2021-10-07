@@ -1,3 +1,4 @@
+@use "sass:math";
 // Helpers ensure we can stick together our components and fix any contextual
 // issues that arise during the front end build
 
@@ -46,7 +47,7 @@
 }
 
 .buffer-sm {
-  padding-top: ($dimension-padding / 2);
+  padding-top: math.div($dimension-padding, 2);
 }
 
 .buffer-lg {

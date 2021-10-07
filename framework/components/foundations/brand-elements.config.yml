@@ -1,4 +1,4 @@
 title: Brand elements
 context:
-    logo: public/images/logo-primary.png
-    logo-secondary: public/images/logo-secondary.png
+    logo: /images/logo-primary.png
+    logo-secondary: /images/logo-secondary.png
