@@ -1,12 +1,12 @@
 {
   "name": "catchify-core",
-  "version": "4.1.0",
+  "version": "4.2.0",
   "description": "A collection of front end files to kickstart projects",
   "main": "js/index.js",
   "scripts": {
     "format:js": "node scripts/format.js ./node_modules './js/**/*.js'",
     "format:scss": "node scripts/format.js ./node_modules './sass/**/*.scss'",
-    "build": "npm run format:scss && npm run format:js && npm-run-all build:* build:**",
+    "build": "  npm-run-all build:* build:**",
     "build:css": "sass -I node_modules sass/styles.scss dist/styles.css",
     "build:css:components": "sass -I node_modules ./sass/entrypoints:./dist",
     "build:js": "node scripts/js.js ./node_modules ./js/index.js ./dist/bundle.js",
