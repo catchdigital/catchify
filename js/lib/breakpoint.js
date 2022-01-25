@@ -98,7 +98,6 @@ const breakpoint = {
         breakpoint = element.getAttribute(this.options.dataAttrSelector);
       }
     });
-    console.log(breakpoint);
     return breakpoint;
   },
 
