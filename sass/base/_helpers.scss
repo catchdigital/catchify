@@ -71,13 +71,18 @@
 .hidden-xs,
 .hidden-sm,
 .hidden-md,
+.hidden-lg,
+.hidden-xl,
+.hidden-xxl,
 .visible-sm,
 .visible-md,
-.visible-lg {
+.visible-lg,
+.visible-xl,
+.visible-xxl {
   display: none;
 }
 
-@media (min-width: $screen-sm-min) {
+@include media-breakpoint-up(sm) {
   .visible-sm,
   .hidden-xs {
     display: block;
@@ -96,7 +101,7 @@
   }
 }
 
-@media (min-width: $screen-md-min) {
+@include media-breakpoint-up(md) {
   .visible-md,
   .hidden-sm {
     display: block;
@@ -107,9 +112,23 @@
   }
 }
 
-@media (min-width: $screen-lg-min) {
+@include media-breakpoint-up(lg) {
   .visible-lg,
   .hidden-md {
+    display: block;
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  .visible-xl,
+  .hidden-lg {
+    display: block;
+  }
+}
+
+@include media-breakpoint-up(xxl) {
+  .visible-xxl,
+  .hidden-xl {
     display: block;
   }
 }
