@@ -5,7 +5,7 @@ import {
   Modal,
   Datepicker,
   Timepicker
-} from '@materializecss/materialize';
+} from '../../lib/materialize';
 
 document.addEventListener('DOMContentLoaded', function() {
   // Init select box

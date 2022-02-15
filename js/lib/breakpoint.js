@@ -21,7 +21,7 @@ const defaultOptions = {
   classPrefix: 'visible-',
   // The different sizes to create elements for
   // Should map to breakpoints
-  breakpoints: ['xs', 'sm', 'md', 'lg'],
+  breakpoints: ['xs', 'sm', 'md', 'lg', 'xl', 'xxl'],
   // The breakpoint attribute used to query visible element flag
   dataAttrSelector: 'data-catchify-breakpoint',
   // An event to fire when the breakpoint initialises
