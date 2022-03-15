@@ -25,7 +25,16 @@ document.addEventListener('DOMContentLoaded', function() {
   // The format has been set up following Drupal time field standards.
   // TODO: Create a fallback which takes the value from the field data attrs.
   const datepickers = document.querySelectorAll('.datepicker');
-  const datepikerInstances = M.Datepicker.init(datepickers, {'format': 'yyyy-m-d'});
+  const datepickerInstances = M.Datepicker.init(datepickers, {'format': 'yyyy-m-d'});
+
+  // Tab onto input and open date picker modal
+  datepickerInstances.forEach(function(instance){
+    const element = instance.$el[0]
+    element.addEventListener('focus', function(){
+      instance.open();
+    });
+  })
+  
 
   // Init timepicker
   // Twelve hours type isn't supported by Drupal..
