@@ -3514,7 +3514,7 @@ $jscomp.polyfill = function (e, r, p, m) {
   M.Dropdown = Dropdown;
 
   if (M.jQueryLoaded) {
-    M.initializeJqueryWrapper(Dropdown, 'dropdown', 'M_Dropdown');
+    M.initializeJqueryWrapper(Dropdown, 'mdropdown', 'M_Dropdown');
   }
 })(cash, M.anime);
 ;(function ($, anim) {
