@@ -38,3 +38,16 @@ index 899bba3..b716284 100644
        document.body.removeEventListener('touchmove', this._handleDocumentTouchmoveBound);
        this.dropdownEl.removeEventListener('keydown', this._handleDropdownKeydownBound);
      }
+diff --git a/node_modules/@materializecss/materialize/sass/components/forms/_input-fields.scss b/node_modules/@materializecss/materialize/sass/components/forms/_input-fields.scss
+index f18c2f8..0549bf8 100644
+--- a/node_modules/@materializecss/materialize/sass/components/forms/_input-fields.scss
++++ b/node_modules/@materializecss/materialize/sass/components/forms/_input-fields.scss
+@@ -222,7 +222,7 @@ textarea.materialize-textarea {
+     width: $input-height;
+     font-size: $input-icon-size;
+     transition: color .2s;
+-    top: ($input-height - $input-icon-size) / 2;
++    top: (#{$input-height} - #{$input-icon-size}) / 2;
+ 
+     &.active { color: $input-focus-color; }
+   }
