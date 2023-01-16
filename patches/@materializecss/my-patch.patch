@@ -1,0 +1,11 @@
+--- node_modules/@materializecss/materialize/sass/components/forms/_input-fields.scss
++++ node_modules/@materializecss/materialize/sass/components/forms/_input-fields.scss
+@@ -222,7 +222,7 @@
+     width: $input-height;
+     font-size: $input-icon-size;
+     transition: color .2s;
+-    top: ($input-height - $input-icon-size) / 2;
++    top: (#{$input-height} - #{$input-icon-size}) / 2;
+
+     &.active { color: $input-focus-color; }
+   }
