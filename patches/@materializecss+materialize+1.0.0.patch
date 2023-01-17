@@ -38,6 +38,113 @@ index 899bba3..b716284 100644
        document.body.removeEventListener('touchmove', this._handleDocumentTouchmoveBound);
        this.dropdownEl.removeEventListener('keydown', this._handleDropdownKeydownBound);
      }
+diff --git a/node_modules/@materializecss/materialize/js/select.js b/node_modules/@materializecss/materialize/js/select.js
+index 2266de8..fdbd178 100644
+--- a/node_modules/@materializecss/materialize/js/select.js
++++ b/node_modules/@materializecss/materialize/js/select.js
+@@ -113,9 +113,14 @@
+      */
+     _handleOptionClick(e) {
+       e.preventDefault();
+-      let option = $(e.target).closest('li')[0];
+-      let key = option.id;
+-      if (!$(option).hasClass('disabled') && !$(option).hasClass('optgroup') && key.length) {
++      let optionEl = $(e.target).closest('li')[0];
++      this._selectOption(optionEl);
++      e.stopPropagation();
++    }
++
++    _selectOption(optionEl) {
++      let key = optionEl.id;
++      if (!$(optionEl).hasClass('disabled') && !$(optionEl).hasClass('optgroup') && key.length) {
+         let selected = true;
+ 
+         if (this.isMultiple) {
+@@ -131,7 +136,9 @@
+           $(this.dropdownOptions)
+             .find('li')
+             .removeClass('selected');
+-          $(option).toggleClass('selected', selected);
++          $(optionEl).toggleClass('selected', selected);
++          this._keysSelected = {};
++          this._keysSelected[optionEl.id] = true;
+         }
+ 
+         // Set selected on original select option
+@@ -143,7 +150,9 @@
+         }
+       }
+ 
+-      e.stopPropagation();
++      if (!this.isMultiple) {
++        this.dropdown.close();
++      }
+     }
+ 
+     /**
+@@ -163,7 +172,10 @@
+       this.wrapper = document.createElement('div');
+       $(this.wrapper).addClass('select-wrapper ' + this.options.classes);
+       this.$el.before($(this.wrapper));
+-      this.wrapper.appendChild(this.el);
++      // Move actual select element into overflow hidden wrapper
++      let $hideSelect = $('<div class="hide-select"></div>');
++      $(this.wrapper).append($hideSelect);
++      $hideSelect[0].appendChild(this.el);
+ 
+       if (this.el.disabled) {
+         this.wrapper.classList.add('disabled');
+@@ -205,7 +217,7 @@
+         });
+       }
+ 
+-      this.$el.after(this.dropdownOptions);
++      $(this.wrapper).append(this.dropdownOptions);
+ 
+       // Add input dropdown
+       this.input = document.createElement('input');
+@@ -217,18 +229,19 @@
+         $(this.input).prop('disabled', 'true');
+       }
+ 
+-      this.$el.before(this.input);
++      $(this.wrapper).prepend(this.input);
+       this._setValueToInput();
+ 
+       // Add caret
+       let dropdownIcon = $(
+         '<svg class="caret" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>'
+       );
+-      this.$el.before(dropdownIcon[0]);
++      $(this.wrapper).prepend(dropdownIcon[0]);
+ 
+       // Initialize dropdown
+       if (!this.el.disabled) {
+         let dropdownOptions = $.extend({}, this.options.dropdownOptions);
++        let userOnOpenEnd = dropdownOptions.onOpenEnd;
+ 
+         // Add callback for centering selected option when dropdown content is scrollable
+         dropdownOptions.onOpenEnd = (el) => {
+@@ -252,11 +265,16 @@
+               this.dropdownOptions.scrollTop = scrollOffset;
+             }
+           }
++
++          // Handle user declared onOpenEnd if needed
++          if (userOnOpenEnd && typeof userOnOpenEnd === 'function') {
++            userOnOpenEnd.call(this.dropdown, this.el);
++          }
+         };
+ 
+-        if (this.isMultiple) {
+-          dropdownOptions.closeOnClick = false;
+-        }
++        // Prevent dropdown from closeing too early
++        dropdownOptions.closeOnClick = false;
++
+         this.dropdown = M.Dropdown.init(this.input, dropdownOptions);
+       }
+ 
 diff --git a/node_modules/@materializecss/materialize/sass/components/forms/_input-fields.scss b/node_modules/@materializecss/materialize/sass/components/forms/_input-fields.scss
 index f18c2f8..0549bf8 100644
 --- a/node_modules/@materializecss/materialize/sass/components/forms/_input-fields.scss
