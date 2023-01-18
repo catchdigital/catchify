@@ -7,8 +7,8 @@
     "format:js": "node scripts/format.js ./node_modules './js/**/*.js'",
     "format:scss": "node scripts/format.js ./node_modules './sass/**/*.scss'",
     "build": "npm-run-all build:* build:**",
-    "build:css": "sass-migrator --load-path node_modules division **/*.scss --migrate-deps && sass -I node_modules sass/styles.scss dist/styles.css",
-    "build:css:components": "sass -I node_modules ./sass/entrypoints:./dist",
+    "build:css": "sass -I node_modules sass/styles.scss dist/styles.css",
+    "build:css:components": "sass -I node_modules sass/entrypoints:dist",
     "build:js": "node scripts/js.js ./node_modules ./js/index.js ./dist/bundle.js",
     "build:js:components": "ls -A1 js/components/ | while read f; do node scripts/js.js ./node_modules ./js/components/${f%.*}/index.js ./dist/${f%/}.js; done;",
     "test:js": "JASMINE_CONFIG_PATH=js/tests/jasmine.json node ./node_modules/.bin/babel-node --presets node6 ./node_modules/.bin/jasmine",
@@ -18,7 +18,7 @@
     "watch": "chokidar 'js/**/*.js' 'sass/**/*.scss' -c 'npm run build'",
     "fractal:watch": "fractal start --sync",
     "fractal:build": "fractal build",
-    "postinstall": "patch-package"
+    "postinstall": "patch-package && npx sass-migrator --load-path node_modules division **/*.scss --migrate-deps"
   },
   "repository": {
     "type": "git",
