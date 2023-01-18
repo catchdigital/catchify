@@ -9,7 +9,7 @@ if (args.length < 4) {
     'Please provide paths to node_modules, the input and the output directory and output file'
   );
 } else {
-  exec(`npx sass -I ${args[0]} ${args[1]}:${args[2]}`, (err) => {
+  exec(`npx sass -I ${args[0]} ${args[1]}:${args[3]}`, (err) => {
     if (err) {
       return console.error('\x1b[31m', err);
     }
