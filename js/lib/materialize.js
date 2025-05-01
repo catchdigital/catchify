@@ -14224,7 +14224,7 @@ var $jscomp$this = this;
             this.input.setAttribute("role", "combobox");
             this.input.setAttribute("aria-haspopup", "listbox");
             this.input.setAttribute("aria-controls", this.dropdownOptions.id);
-            this.input.setAttribute("aria-autocomplete", "false");
+            this.input.setAttribute("aria-autocomplete", "none");
             this.input.setAttribute("data-target", this.dropdownOptions.id);
             if (this.el.disabled) {
               $(this.input).prop("disabled", "true");
