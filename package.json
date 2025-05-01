@@ -1,6 +1,6 @@
 {
   "name": "catchify-core",
-  "version": "4.2.1",
+  "version": "4.2.3",
   "description": "A collection of front end files to kickstart projects",
   "main": "js/index.js",
   "scripts": {
@@ -51,7 +51,6 @@
   "devDependencies": {
     "@frctl/fractal": "^1.3.0",
     "@frctl/mandelbrot": "^1.6.0",
-    "babel-preset-node6": "^11.0.0",
     "chokidar": "^3.4.3",
     "chokidar-cli": "^3.0.0",
     "jasmine": "^2.99.0",
