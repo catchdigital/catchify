@@ -5927,6 +5927,7 @@ var $jscomp$this = this;
 
             var indicator = document.createElement("div");
             indicator.classList.add("indicator");
+            indicator.setAttribute("aria-hidden", "true");
 
             this.el.appendChild(indicator);
             this._indicator = indicator;
@@ -14111,8 +14112,11 @@ var $jscomp$this = this;
               } else {
                 $(this.dropdownOptions)
                   .find("li")
-                  .removeClass("selected");
-                $(optionEl).toggleClass("selected", selected);
+                  .removeClass("selected")
+                  .removeAttr("aria-selected");
+                $(optionEl)
+                  .toggleClass("selected", selected)
+                  .attr("aria-selected", "true");
                 this._keysSelected = {};
                 this._keysSelected[optionEl.id] = true;
               }
@@ -14159,6 +14163,8 @@ var $jscomp$this = this;
             // Move actual select element into overflow hidden wrapper
             var $hideSelect = $('<div class="hide-select"></div>');
             $(this.wrapper).append($hideSelect);
+            var id = $(this.el).attr("id");
+            $(this.el).removeAttr("id");
             $hideSelect[0].appendChild(this.el);
 
             if (this.el.disabled) {
@@ -14166,9 +14172,11 @@ var $jscomp$this = this;
             }
 
             // Create dropdown
+
             this.$selectOptions = this.$el.children("option, optgroup");
             this.dropdownOptions = document.createElement("ul");
             this.dropdownOptions.id = "select-options-" + M.guid();
+            this.dropdownOptions.setAttribute("role", "listbox");
             $(this.dropdownOptions).addClass(
               "dropdown-content select-dropdown " +
                 (this.isMultiple ? "multiple-select-dropdown" : "")
@@ -14219,6 +14227,9 @@ var $jscomp$this = this;
             // Add input dropdown
             this.input = document.createElement("input");
             $(this.input).addClass("select-dropdown dropdown-trigger");
+            this.input.setAttribute("id", id);
+            this.input.setAttribute("aria-labelled-by", id + "-label");
+            this.input.setAttribute("tabindex", "0");
             this.input.setAttribute("type", "text");
             this.input.setAttribute("readonly", "true");
             this.input.setAttribute("role", "combobox");
@@ -14235,7 +14246,7 @@ var $jscomp$this = this;
 
             // Add caret
             var dropdownIcon = $(
-              '<svg class="caret" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>'
+              '<svg class="caret" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>'
             );
             $(this.wrapper).prepend(dropdownIcon[0]);
 
@@ -14344,6 +14355,8 @@ var $jscomp$this = this;
             var spanEl = $("<span></span>");
             spanEl.html(multipleCheckbox);
             liEl.addClass(disabledClass + " " + optgroupClass);
+            liEl.attr("role", "option");
+            liEl.attr("tabindex", "-1");
             liEl.append(spanEl);
 
             // add icons
@@ -14461,6 +14474,7 @@ var $jscomp$this = this;
               }
               var option = $(newOption);
               option.addClass("selected");
+              option.attr("aria-selected", "true");
             }
           },
 
