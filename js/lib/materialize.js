@@ -14228,7 +14228,7 @@ var $jscomp$this = this;
             this.input = document.createElement("input");
             $(this.input).addClass("select-dropdown dropdown-trigger");
             this.input.setAttribute("id", id);
-            this.input.setAttribute("aria-labelled-by", id + "-label");
+            this.input.setAttribute("aria-labelledby", id + "-label");
             this.input.setAttribute("tabindex", "0");
             this.input.setAttribute("type", "text");
             this.input.setAttribute("readonly", "true");
